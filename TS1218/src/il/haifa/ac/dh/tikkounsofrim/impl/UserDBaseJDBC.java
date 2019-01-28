@@ -265,11 +265,13 @@ public class UserDBaseJDBC implements UserDBase {
 			statement = connect.createStatement();
 			resultSet = statement
 	                 .executeQuery("select count(*) from tikkoun.users where userid = '"+ user + "'and status <> '0'");
-			resultSet.last();
-			int rowcount = resultSet.getInt(1);
-			 if(rowcount > 0) {
-				 return rowcount;
-			 }
+			boolean empty = resultSet.last();
+			if (!empty) {
+				int rowcount = resultSet.getInt(1);
+				if (rowcount > 0) {
+					return rowcount;
+				} 
+			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -280,6 +282,68 @@ public class UserDBaseJDBC implements UserDBase {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	@Override
+	public int getTotalTimesLineSeen(ManuscriptPlace place) {
+		// TODO Auto-generated method stub
+		try {
+			connect();
+			statement = connect.createStatement();
+			resultSet = statement
+	                 .executeQuery("select count(*) from tikkoun.users where manuscript = '"+ place.manuscriptId +
+	                		 "'and page = '"+place.page+ 
+	                		 "'and line = '"+place.line+ 
+	                		  "'");
+			boolean empty = resultSet.last();
+			if (!empty) {
+				int rowcount = resultSet.getInt(1);
+				if (rowcount > 0) {
+					return rowcount;
+				} 
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return -1;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public int getTotalTimesLineCorrected(ManuscriptPlace place) {
+		// TODO Auto-generated method stub
+		try {
+			connect();
+			statement = connect.createStatement();
+			resultSet = statement
+	                 .executeQuery("select count(*) from tikkoun.users where manuscript = '"+ place.manuscriptId +
+	                		 "'and page = '"+place.page+ 
+	                		 "'and line = '"+place.line+ 
+	                		 
+	                		 "'and status <> '0'");
+			boolean empty = resultSet.last();
+			if (!empty) {
+				int rowcount = resultSet.getInt(1);
+				if (rowcount > 0) {
+					return rowcount;
+				} 
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return -1;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+
 	}
 }
 

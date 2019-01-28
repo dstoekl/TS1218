@@ -1,6 +1,8 @@
+
 package il.haifa.ac.dh.tikkounsofrim.impl;
 
 import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptID;
+import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider;
 import il.haifa.ac.dh.tikkounsofrim.model.TikunUser;
 
@@ -9,13 +11,27 @@ public class TaskProviderImpl implements TaskProvider {
 	@Override
 	public Task getTask(TikunUser user) {
 		// TODO Auto-generated method stub
-		return new Task(user,new ManuscriptID("Geneva 146"),7,13,null,null);
+		ManuscriptPlace seed = new ManuscriptPlace("Geneva 146", 7, 13);
+		seed = getNextFree(seed);
+		return getTask(user,seed);
 	}
 	
+
+
+	private ManuscriptPlace getNextFree(ManuscriptPlace seed) {
+		// TODO Auto-generated method stub
+		boolean free = checkIfFree(seed);
+		while(!free) {
+			seed = seed.getNext(0, 0);
+			free = checkIfFree(seed);
+		}
+		return seed;
+	}
+
 	@Override
-	public Task getTask(TikunUser user, String m, int p, int l) {
+	public Task getTask(TikunUser user, ManuscriptPlace firstPlace) {
 		
-		return new Task(user,new ManuscriptID(m),p,l,null,null);
+		return new Task(user,firstPlace,null,null);
 	}
 
 	@Override
