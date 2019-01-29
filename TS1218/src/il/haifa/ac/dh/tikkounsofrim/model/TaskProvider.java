@@ -3,21 +3,22 @@ package il.haifa.ac.dh.tikkounsofrim.model;
 public interface TaskProvider {
 	
 	Task getTask(TikunUser user);
-	Task getNextTask(Task task, int totalPages, int totalLines);
+	Task getNextTask(Task task);
 	int getNumberOfLinesTranscribed(Task task);
-	 Task getTask(TikunUser user, String m, int p, int l);
+	Task getTask(TikunUser user, ManuscriptPlace firstPlace);
+	 
 	 Task getTask(TikunUser user, int book, int chapter);
 	
 	class Task {
 		
-		public Task(TikunUser user, ManuscriptID mId, int startPageNumber, int startLineNumber, TaskType tType, TaskLevel tLevel) {
+		public Task(TikunUser user, ManuscriptPlace place, TaskType tType, TaskLevel tLevel) {
 			super();
-			this.mId = mId;
-			this.startPageNumber = startPageNumber;
+			this.mId = place.manuscriptId;
+			this.startPageNumber = place.page;
 			this.pageNumber = startPageNumber;
 			
 			
-			this.startLineNumber = startLineNumber;
+			this.startLineNumber = place.line;
 			this.lineNumber = startLineNumber; 
 			
 			this.tType = tType;
@@ -75,6 +76,8 @@ public interface TaskProvider {
 		
 		
 	}
+
+	
 
 
 
