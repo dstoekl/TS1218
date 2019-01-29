@@ -15,9 +15,10 @@ import il.haifa.ac.dh.tikkounsofrim.model.TranscriptionProvider;
 
 public class ManuscriptProviderImpl implements ManuscriptProvider {
 	
+	private static ManuscriptProviderImpl instance = null;
 	ManuscriptDescriptor GENEVA146; 
 		
-	public ManuscriptProviderImpl() {
+	private ManuscriptProviderImpl() {
 		super();
 		ManuscriptData gmdata= ManuscriptDataImpl.loadData(ManuscriptDataImpl.tvsGeneva);
 		GENEVA146 = new ManuscriptDescriptor(gmdata, (SegmentationProvider) gmdata, (TranscriptionProvider) gmdata, 15.9, 
@@ -30,6 +31,12 @@ public class ManuscriptProviderImpl implements ManuscriptProvider {
 		
 	}
 	
+	synchronized public static ManuscriptProviderImpl instance() {
+		if (instance == null) {
+			instance = new ManuscriptProviderImpl();
+		}
+		return instance;
+	}
 	
 	//Task Provider
 
@@ -66,7 +73,7 @@ public class ManuscriptProviderImpl implements ManuscriptProvider {
 		SegData sd = getManuscriptDescription(id).getSegmentationData(pageNumber, activeLine);
 		System.out.println("ImageName "+ sd.getImgName());
 		System.out.println("BoundingBox "+sd.getBbox());
-		return new ImageData(sd.getImgName(), "tikoun-sofrim.haifa.ac.il/cantaloupe", sd.getBbox(), "iiif/2", "http");
+		return new ImageData(sd.getImgName(), "tikkoun-sofrim.haifa.ac.il/cantaloupe", sd.getBbox(), "iiif/2", "http");
 	}
 
 	

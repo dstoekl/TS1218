@@ -25,9 +25,9 @@ import il.haifa.ac.dh.tikkounsofrim.model.UserDBase;
 
 @WebServlet(urlPatterns = {"/TranscribeServlet"})
 public class TranscribeServlet extends HttpServlet {
-	static ManuscriptProviderImpl fi = new ManuscriptProviderImpl();
+	static ManuscriptProvider manuscriptProvider = ManuscriptProviderImpl.instance();
 	static TaskProvider taskProvider;
-	static ManuscriptProvider manuscriptProvider =fi ;
+	
 //	static TranscriptionProvider transcriptionProvider =fi;
 	
 	static TikunUser  user = new TikunUser("Alan");

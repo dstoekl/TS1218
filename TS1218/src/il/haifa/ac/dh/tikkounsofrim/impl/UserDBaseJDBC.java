@@ -16,7 +16,19 @@ public class UserDBaseJDBC implements UserDBase {
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
+	private static UserDBaseJDBC instance = null;
 
+	private UserDBaseJDBC() {
+		
+	}
+	
+	public static synchronized UserDBaseJDBC instance() {
+		if (instance == null) {
+			instance = new UserDBaseJDBC();
+		}
+		return instance;
+	}
+	
     public void readDataBase() throws Exception {
         try {
             // This will load the MySQL driver, each DB has its own driver
@@ -291,7 +303,7 @@ public class UserDBaseJDBC implements UserDBase {
 			connect();
 			statement = connect.createStatement();
 			resultSet = statement
-	                 .executeQuery("select count(*) from tikkoun.users where manuscript = '"+ place.manuscriptId +
+	                 .executeQuery("select count(*) from tikkoun.transcriptions where manuscript = '"+ place.manuscriptId +
 	                		 "'and page = '"+place.page+ 
 	                		 "'and line = '"+place.line+ 
 	                		  "'");
@@ -321,7 +333,7 @@ public class UserDBaseJDBC implements UserDBase {
 			connect();
 			statement = connect.createStatement();
 			resultSet = statement
-	                 .executeQuery("select count(*) from tikkoun.users where manuscript = '"+ place.manuscriptId +
+	                 .executeQuery("select count(*) from tikkoun.transcriptions where manuscript = '"+ place.manuscriptId +
 	                		 "'and page = '"+place.page+ 
 	                		 "'and line = '"+place.line+ 
 	                		 
