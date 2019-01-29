@@ -235,7 +235,7 @@ public class UserDBaseJDBC implements UserDBase {
 			          .prepareStatement("insert into  tikkoun.transcriptions values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 			preparedStatement.setTimestamp(1,new Timestamp(endtime));
 			preparedStatement.setString(2, user);
-		      preparedStatement.setString(3, place.manuscriptId);
+		      preparedStatement.setString(3, place.manuscriptId.getName());
 		      preparedStatement.setInt(4, place.page);
 		      preparedStatement.setInt(5, place.line);
 		      preparedStatement.setString(6, version);

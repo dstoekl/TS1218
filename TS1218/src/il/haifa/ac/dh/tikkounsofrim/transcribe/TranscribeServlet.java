@@ -137,7 +137,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 
 		
 	    taskProvider = (TaskProvider) request.getSession().getAttribute("taskProvider");
-		taskProvider.getNextTask(task, manuscriptDesc.getTotalPageNumber(), manuscriptDesc.getTotalLineNumbers(task.getPageNumber()));
+		taskProvider.getNextTask(task);
 		request.getSession().setAttribute("task",task);
 		setupTranscription(request, task);
 		start = System.currentTimeMillis();

@@ -66,7 +66,7 @@ public class ManuscriptProviderImpl implements ManuscriptProvider {
 		SegData sd = getManuscriptDescription(id).getSegmentationData(pageNumber, activeLine);
 		System.out.println("ImageName "+ sd.getImgName());
 		System.out.println("BoundingBox "+sd.getBbox());
-		return new ImageData(sd.getImgName(), "pilproj.haifa.ac.il:8080/cantaloupe-4.0.2", sd.getBbox(), "iiif/2", "http");
+		return new ImageData(sd.getImgName(), "tikoun-sofrim.haifa.ac.il/cantaloupe", sd.getBbox(), "iiif/2", "http");
 	}
 
 	

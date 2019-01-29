@@ -8,11 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import il.haifa.ac.dh.tikkounsofrim.impl.ManuscriptProviderImpl;
 import il.haifa.ac.dh.tikkounsofrim.impl.TaskProviderImpl;
 import il.haifa.ac.dh.tikkounsofrim.impl.UserDBaseJDBC;
+import il.haifa.ac.dh.tikkounsofrim.model.ImageData;
+import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptDescriptor;
+import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptID;
+import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
+import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptProvider;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider;
 import il.haifa.ac.dh.tikkounsofrim.model.TikunUser;
+import il.haifa.ac.dh.tikkounsofrim.model.TranscribedString;
 import il.haifa.ac.dh.tikkounsofrim.model.UserDBase;
 import il.haifa.ac.dh.tikkounsofrim.model.UserInfo;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider.Task;
@@ -25,8 +31,10 @@ public class LoginServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	static TaskProvider taskProvider = new TaskProviderImpl();
-    static  UserDBase userValidationService = new UserDBaseJDBC();
+	static  UserDBase userValidationService = new UserDBaseJDBC();
+	static  ManuscriptProvider mp = new ManuscriptProviderImpl();
+	static TaskProvider taskProvider = new TaskProviderImpl(null, userValidationService);
+    
 	
 //private TodoService todoService = new TodoService();
 
@@ -160,7 +168,7 @@ public class LoginServlet extends HttpServlet {
 			int p =convert(request.getParameter("p"));
 			int l =convert(request.getParameter("l"));
 			if( task== null & m!= null && m.length() > 0  && p > 0  && l > 0 ) {
-				task =  taskProvider.getTask(user, m,p,l);
+				task =  taskProvider.getTask(user,new ManuscriptPlace( m,p,l));
 			} 
 			
 			if(task == null) {

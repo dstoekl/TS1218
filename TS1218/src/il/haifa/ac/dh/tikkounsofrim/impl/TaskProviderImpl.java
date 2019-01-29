@@ -13,7 +13,7 @@ public class TaskProviderImpl implements TaskProvider {
 private static final int CORRECT_LIMIT = 5;
 ManuscriptProvider mprov= null;
   UserDBase userDB = null;
-	protected TaskProviderImpl(ManuscriptProvider mprov, UserDBase userDB) {
+	public TaskProviderImpl(ManuscriptProvider mprov, UserDBase userDB) {
 	super();
 	this.mprov = mprov;
 	this.userDB = userDB;
