@@ -2,15 +2,13 @@ package il.haifa.ac.dh.tikkounsofrim.transcribe;
 
 import java.io.IOException;
 
-
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import il.haifa.ac.dh.tikkounsofrim.impl.ManuscriptProviderImpl;
-
+import il.haifa.ac.dh.tikkounsofrim.impl.*;
 import il.haifa.ac.dh.tikkounsofrim.model.ImageData;
 import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptDescriptor;
 import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
@@ -25,12 +23,12 @@ import il.haifa.ac.dh.tikkounsofrim.model.UserDBase;
 
 @WebServlet(urlPatterns = {"/TranscribeServlet"})
 public class TranscribeServlet extends HttpServlet {
-	static ManuscriptProvider manuscriptProvider = ManuscriptProviderImpl.instance();
+	static ManuscriptProvider manuscriptProvider = null;
 	static TaskProvider taskProvider;
 	
 //	static TranscriptionProvider transcriptionProvider =fi;
 	
-	static TikunUser  user = new TikunUser("Alan");
+	static TikunUser user = new TikunUser("Alan");
 	long start = 0;
 
 	/**
@@ -38,6 +36,13 @@ public class TranscribeServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		FilePathUtils.setFilePath(config);
+		manuscriptProvider = ManuscriptProviderImpl.instance();
+	}
 //	private TodoService todoService = new TodoService();
 
 	//java -Dcantaloupe.config=C:cantaloupe.properties.sample -Xmx2g -jar cantaloupe-4.0.2.war

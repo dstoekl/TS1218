@@ -1,5 +1,6 @@
 package il.haifa.ac.dh.tikkounsofrim.impl;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class ManuscriptDataImpl implements ManuscriptData, SegmentationProvider,
 	static ManuscriptDataImpl loadData(String tvsFile){
 		ManuscriptDataImpl mData = new ManuscriptDataImpl();
 	
-		TSVUtils.readIn(FilePathUtils.getFilePath()+"\\"+tvsFile+".txt", new DoParse() {
+		TSVUtils.readIn(FilePathUtils.getFilePath()+File.separatorChar+tvsFile+".txt", new DoParse() {
 			
 			@Override
 			public void doIt(String[] item) {
