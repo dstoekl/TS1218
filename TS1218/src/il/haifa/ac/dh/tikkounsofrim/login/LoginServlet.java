@@ -2,15 +2,13 @@ package il.haifa.ac.dh.tikkounsofrim.login;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import il.haifa.ac.dh.tikkounsofrim.impl.ManuscriptProviderImpl;
-import il.haifa.ac.dh.tikkounsofrim.impl.TaskProviderImpl;
-import il.haifa.ac.dh.tikkounsofrim.impl.UserDBaseJDBC;
+import il.haifa.ac.dh.tikkounsofrim.impl.*;
 import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
 import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptProvider;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider;
@@ -33,6 +31,12 @@ public class LoginServlet extends HttpServlet {
     
 	
 //private TodoService todoService = new TodoService();
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		FilePathUtils.setFilePath(config);
+	}
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

@@ -1,4 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<fmt:setLocale value="he"/>
+<fmt:setBundle basename="messages"></fmt:setBundle>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +34,7 @@
 <body style="background-color:<%= bgcolor %>; font-family: Georgia;">
 	<%@ include file="../common/navigation.jspf"%>
     <div style="float:left ;  width:33%; margin: 40px; background-color: <%= bgcolor %>; color:<%= txtcolor %>;text-align: center;">
-    <h2>Welcome to Tikkoun Sofrim!</h2>
+    <h2><fmt:message key="login.welcome.header"/></h2>
     
     <p>Help us train a computerized reading of Hebrew manuscripts, by correcting errors in the initial automatic reading
     <p>This Project aims to train the computer to recognize handwritten text of Hebrew manuscripts. We need your help in correcting errors in the initial automatic reading!
