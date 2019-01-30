@@ -55,11 +55,9 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("p",request.getParameter("p"));
 				request.setAttribute("l",request.getParameter("l"));
 			}
-			String book = request.getParameter("b");
-			if(book != null &&  book != "") {
-				request.setAttribute("b",book);
-				request.setAttribute("c",request.getParameter("c"));
-				
+			String ntnchapter = request.getParameter("ntn");
+			if(ntnchapter != null &&  ntnchapter != "") {
+				request.setAttribute("ntn",ntnchapter);
 			}
 			String direct = request.getParameter("direct");
 			if(direct != null && direct != "") {

@@ -119,7 +119,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 			version = "";
 			
 		}
-		ManuscriptDescriptor manuscriptDesc =  manuscriptProvider.getManuscriptDescription(task.getmId());
+	//	ManuscriptDescriptor manuscriptDesc =  manuscriptProvider.getManuscriptDescription(task.getmId());
 		ManuscriptPlace place = new ManuscriptPlace(task.getmId().getName(), pageNumber, lineNumber);
 		String automaticTranscription = (String) request.getSession().getAttribute("transcribedline");
 		if (automaticTranscription == null) {
@@ -132,7 +132,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 		}
 		start = (long) request.getSession().getAttribute("starttime");
 		userDB.addTranscription(user.getId(), System.currentTimeMillis(), place, version, automaticTranscription, transcribed, status,start);
-		System.out.println("!!!!CrowdSoureData: user-"+user.getId()+" status="+status+",page-"+pageNumber+",line-"+lineNumber+",transcribed-"+transcribed
+		System.out.println("!!!!CrowdSourceData: user-"+user.getId()+" status="+status+",page-"+pageNumber+",line-"+lineNumber+",transcribed-"+transcribed
 				+"originalTranscribed:"+ automaticTranscription);
 
 		

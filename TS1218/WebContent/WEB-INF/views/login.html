@@ -8,7 +8,21 @@
 	
         <link rel="stylesheet" type="text/css" href="views/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="views/css/animate-custom.css" />
-<%@ include file="../common/colors.jspf"%>
+<script>
+String bgcolor = "#f5deb3";
+String txtcolor = "#512a0c";
+String frmcolor = "#d3c2a8";
+String ntxtcolor = "black";
+String grdcolor = "#854513,#f5deb3,#854513";
+//String grdcolor = "#f5deb3,#512a0c,#f5deb3";
+String tab1color = "#d3c2a8";
+String tab2color = "#d3b296";
+String tab3color = "#d3b48c";
+String tab4color = "#d3a973";
+String tab5color = "#d39269";
+
+</script>
+
 <style>
 .likert li {
   float: left;
@@ -23,11 +37,71 @@
 	background-color: #f5f5f5;
 }
 </style>
+<style>
+<!--
+
+-->
+.navbar-default .navbar-nav>.active> a, 
+.navbar-default .navbar-nav>.active> a:focus, 
+.navbar-default .navbar-nav>.active> a:hover {
+  color: <%= txtcolor %>;
+  background-color: <%= bgcolor %>;    
+}
+.nav-item > a:hover {
+  color: <%= txtcolor %>;
+}
+</style>
 </head>
 
 
 <body style="background-color:<%= bgcolor %>; font-family: Georgia;">
-	<%@ include file="../common/navigation.jspf"%>
+	<!--  include file="../common/navigation.jspf"%-->
+	
+<div style="margin:0;">
+
+	<div style="background-size: cover;background-image: url('/TS1218/images/Banner_1900_100.png'); width:100%; height:60px;background-color: rgba(255,255,255,0.4);background-blend-mode: lighten;">
+	<a href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp"  >
+	<img style="float:left;" alt="" src="/TS1218/images/TS_logo_nobackground.png" height="60px">
+	
+	<label style="padding:10px 40px;float:right;font-size:18px;height:60px;width:40%;font-style:italic;color: <%= ntxtcolor %> ">Discover Ancient Hebrew Manuscripts<br>
+	Try your skills at deciphering them</label><br>
+	<!-- Ancient Hebrew Manuscripts Now accessible thanks to your help!
+	Discover Ancient Hebrew Manuscripts Try your skills at decipering them -->
+	</a>
+	
+	
+	</div>
+	<nav class="navbar navbar-default" style="background-image: linear-gradient(<%= grdcolor %>); width:99%;padding:0px;min-height:30px; height: 30px;">
+
+		
+
+		<ul class="nav navbar-nav" style="background-image: linear-gradient(<%= grdcolor %> ); ">
+		
+			<li id="project" class="htab"><a href="${pageContext.request.contextPath}/LoginServlet?page=views/project.jsp" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">The Project</a></li>
+			<li id="htr"  class="htab"><a href="${pageContext.request.contextPath}/LoginServlet?page=views/htr.jsp" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">What is HTR?</a></li>
+			<li id="tanhuma"  class="htab"><a href="${pageContext.request.contextPath}/LoginServlet?page=views/tanhuma.jsp" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">Tanchuma</a></li>
+			<li id="team"  class="htab"><a href="${pageContext.request.contextPath}/LoginServlet?page=views/team.jsp" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">The Team</a></li>
+			<!-- li id="task"  class="htab"><a href="${pageContext.request.contextPath}/LoginServlet?page=views/task.jsp" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">Task Description</a></li -->
+			<!-- li id="links"  class="htab"><a href="${pageContext.request.contextPath}/LinksServlet" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">Links</a></li-->
+			<li id="work" class="htab"><a href="${pageContext.request.contextPath}/TranscribeServlet" style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">Get to work!</a></li>
+			
+			
+			
+			
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right" style="background-image: linear-gradient('<%= grdcolor %>'); ">
+		
+		
+		<li><a style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">FR</a>  </li>
+		<li class="active"><a style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">EN</a></li>
+		<li dir="rtl"><a style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">עב</a></li>
+		<!--  li><a style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;">Settings</a></li-->
+			<li><a style="color: <%= ntxtcolor %>; padding-top: 0px; padding-bottom: 0px; line-height: 28px;" href="${pageContext.request.contextPath}/LogoutServlet">Logout</a></li>
+		</ul>
+
+	</nav>
+</div>
     <div style="float:left ;  width:33%; margin: 40px; background-color: <%= bgcolor %>; color:<%= txtcolor %>;text-align: center;">
     <h2>Welcome to Tikkoun Sofrim!</h2>
     
@@ -64,35 +138,35 @@
                                 
                                  <select name="m" id="manuscript">
                                  <option value=" "> 
-                                 <option ${m1} value="Geneva146">Geneva 146
-                                  <option ${m2} value="Parma">Parma 111
-                                   <option ${m3} value="Vatican"> Vatican 22
+                                 <option value="Geneva146">Geneva 146
+                                  <option value="Parma">Parma 111
+                                   <option value="Vatican"> Vatican 22
                                  
                                  </select>
                                 
                                  <label for="p" > Page </label>
                                 
-                                 <input maxlength="4" id="p" name="p"  style="padding:0px;width:60px;height:25px" type="number" min="1" max="9000"  value="${p}" />
+                                 <input maxlength="4" id="p" name="p"  style="padding:0px;width:60px;height:25px" type="number" min="1" max="9000"  value="25" />
                                   <label for="l" > Line </label>
-                                 <input maxlength="3" id="l" name="l" style="padding:0px;width:45px;height:25px;" type="number" min="1" max="150"  value="${l}" />
+                                 <input maxlength="3" id="l" name="l" style="padding:0px;width:45px;height:25px;" type="number" min="1" max="150"  value="4" />
 								</p>
 								<p> 
 								(Optional)
-								<label for="book" > 929 Chapter </label>
+								<label for="book" > Book </label>
                                 
-                                 <select name="ntn" id="ntn">
+                                 <select name="b" id="book">
                                  <option value=""> 
-                                 <option ${b1} hidden="hidden" value="1">Genesis
-                                  <option ${b2}  hidden="hidden" value="2">Exodus
-                                   <option ${b3}  hidden="hidden" value="3">Leviticus
-                                 <option ${b4}  hidden="hidden" value="4">Numbers
-                                  <option ${b5} value="5">154
+                                 <option  hidden="hidden" value="1">Genesis
+                                  <option   hidden="hidden" value="2">Exodus
+                                   <option   hidden="hidden" value="3">Leviticus
+                                 <option   hidden="hidden" value="4">Numbers
+                                  <option  value="5">Deuteronomy
                                    
                                  </select>
                                 
-                                 <label hidden="hidden" for="chapter" > Chapter </label>
+                                 <label for="chapter" > Chapter </label>
                                 
-                                 <input hidden="hidden" maxlength="2" id="chapter" name="p"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="${c}" />
+                                 <input maxlength="2" id="chapter" name="p"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="1" />
                                  
 								</p>
                                 <p class="login button"> 
