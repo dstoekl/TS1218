@@ -7,7 +7,22 @@ public interface TaskProvider {
 	int getNumberOfLinesTranscribed(Task task);
 	Task getTask(TikunUser user, ManuscriptPlace firstPlace);
 	 
-	 Task getTask(TikunUser user, int book, int chapter);
+	 /**
+	  * Get initial task per user, bible book and chapter within book
+	 * @param user
+	 * @param book
+	 * @param chapter
+	 * @return
+	 */
+	Task getTask(TikunUser user, int book, int chapter);
+
+	/**
+	  * Get initial task per user, and bible chapter (929 numbering, starting with 1)
+	 * @param user
+	 * @param ntnChapter
+	 * @return
+	 */
+	Task getTask(TikunUser user, int ntnChapter);
 	
 	class Task {
 		

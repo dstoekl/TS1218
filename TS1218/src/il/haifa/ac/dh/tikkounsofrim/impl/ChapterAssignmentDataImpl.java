@@ -16,13 +16,15 @@ import il.haifa.ac.dh.tikkounsofrim.model.*;
 public class ChapterAssignmentDataImpl implements ChapterAssignmentData {
 
 	public final static String TSV_GENEVA_FILENAME = "Geneva_146_929.tsv.txt";
+	
+	public final static String GENEVA_MANUSRIPT_NAME = "Geneva 146";
 
 	private Map<Integer, ChapterAssignment> chapterLines = new HashMap<Integer, ChapterAssignment>();
 
 	private String name;
 
-	static ChapterAssignmentData loadData(String tsvFile) {
-		ChapterAssignmentDataImpl mData = new ChapterAssignmentDataImpl();
+	public ChapterAssignmentDataImpl() {
+		String tsvFile = TSV_GENEVA_FILENAME;
 
 		TSVUtils.readIn(FilePathUtils.getFilePath() + File.separatorChar + tsvFile, new DoParse() {
 
@@ -35,12 +37,13 @@ public class ChapterAssignmentDataImpl implements ChapterAssignmentData {
 				int startLine = Integer.parseInt(item[3]);
 				int endPage = Integer.parseInt(item[4]);
 				int endLine = Integer.parseInt(item[5]);
-				ChapterAssignment assingment = new ChapterAssignment(chapter, startPage, startLine, endPage, endLine);
-				mData.chapterLines.put(chapter, assingment);
+				System.out.println(" Assignment: " + chapter + ", " + startPage + ", " + startLine + ", " + endPage + ", " + endLine);
+				ChapterAssignment assingment = new ChapterAssignment(GENEVA_MANUSRIPT_NAME, chapter, startPage,
+						startLine, endPage, endLine);
+				chapterLines.put(chapter, assingment);
 			}
 		});
-		mData.name = tsvFile;
-		return mData;
+		name = GENEVA_MANUSRIPT_NAME;
 	}
 	
 	/* (non-Javadoc)
@@ -50,7 +53,7 @@ public class ChapterAssignmentDataImpl implements ChapterAssignmentData {
 	public String getName() {
 		return name;
 	}
-		
+
 	/* (non-Javadoc)
 	 * @see il.haifa.ac.dh.tikkounsofrim.impl.ChapterAssignmentProvider#getChapterAssignment(int)
 	 */

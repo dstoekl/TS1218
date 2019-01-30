@@ -9,12 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import il.haifa.ac.dh.tikkounsofrim.impl.*;
-import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
-import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptProvider;
-import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider;
-import il.haifa.ac.dh.tikkounsofrim.model.TikunUser;
-import il.haifa.ac.dh.tikkounsofrim.model.UserDBase;
-import il.haifa.ac.dh.tikkounsofrim.model.UserInfo;
+import il.haifa.ac.dh.tikkounsofrim.model.*;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider.Task;
 
 
@@ -38,7 +33,8 @@ public class LoginServlet extends HttpServlet {
 		FilePathUtils.setFilePath(config);
 		userValidationService = UserDBaseJDBC.instance();
 		mp = ManuscriptProviderImpl.instance();
-		taskProvider = new TaskProviderImpl(mp, userValidationService);
+		ChapterAssignmentData chapterAssignmentData = new ChapterAssignmentDataImpl();
+		taskProvider = new TaskProviderImpl(mp, chapterAssignmentData, userValidationService);
 	}
 
 	protected void doGet(HttpServletRequest request,
@@ -62,9 +58,9 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("p",request.getParameter("p"));
 				request.setAttribute("l",request.getParameter("l"));
 			}
-			String ntnchapter = request.getParameter("ntn");
-			if(ntnchapter != null &&  ntnchapter != "") {
-				request.setAttribute("ntn",ntnchapter);
+			String ntnChapter = request.getParameter("ntn");
+			if(ntnChapter != null &&  ntnChapter != "") {
+				request.getSession().setAttribute("ntn", ntnChapter);
 			}
 			String direct = request.getParameter("direct");
 			if(direct != null && direct != "") {
@@ -162,7 +158,14 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("userDB", userValidationService);
 			int b =convert(request.getParameter("b"));
 			int c =convert(request.getParameter("c"));
-			if( task== null & b > 0 &&  c > 0 ) {
+			
+			int ntn = convert((String)request.getSession().getAttribute("ntn"));
+
+			if (task== null && ntn > 0) {
+				task =  taskProvider.getTask(user, ntn);
+			} 
+
+			if( task== null && b > 0 &&  c > 0 ) {
 				task =  taskProvider.getTask(user, b,c);
 			} 
 			String m = request.getParameter("m");

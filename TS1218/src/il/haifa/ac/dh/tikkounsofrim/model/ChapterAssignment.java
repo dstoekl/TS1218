@@ -7,23 +7,17 @@ package il.haifa.ac.dh.tikkounsofrim.model;
  */
 public class ChapterAssignment {
 
+	ManuscriptPlace start;
+	
+	ManuscriptPlace end;
+	
 	int chapter;
-	
-	int startPage;
-	
-	int startLine;
-	
-	int endPage;
-	
-	int endLine;
-	
-	public ChapterAssignment(int chapter, int startPage, int startLine, int endPage, int endLine) {
+		
+	public ChapterAssignment(String manuscriptId, int chapter, int startPage, int startLine, int endPage, int endLine) {
 		super();
 		this.chapter = chapter;
-		this.startPage = startPage;
-		this.startLine = startLine;
-		this.endPage = endPage;
-		this.endLine = endLine;
+		this.start = new ManuscriptPlace(manuscriptId, startPage, startLine);
+		this.end = new ManuscriptPlace(manuscriptId, endPage, endLine);
 	}
 
 	/**
@@ -37,28 +31,28 @@ public class ChapterAssignment {
 	 * @return the startPage
 	 */
 	public int getStartPage() {
-		return startPage;
+		return start.page;
 	}
 
 	/**
 	 * @return the startLine
 	 */
 	public int getStartLine() {
-		return startLine;
+		return start.line;
 	}
 
 	/**
 	 * @return the endPage
 	 */
 	public int getEndPage() {
-		return endPage;
+		return end.page;
 	}
 
 	/**
 	 * @return the endLine
 	 */
 	public int getEndLine() {
-		return endLine;
+		return end.line;
 	}
 	
 }
