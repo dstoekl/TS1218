@@ -1,0 +1,10 @@
+actual_929_ch_assignment	929_chapter_number	Genave_Page_begin	Geneva_line_begin	Geneva_Page_end	Geneva_line_end
+1	154	490	7	492	6
+2	155	492	6	494	14
+3	156	494	15	499	10
+4	157	499	10	501	16
+5	158	501	16	502	2
+6	159	502	2	512	17
+7	160	512	18	514	1
+8	161	514	1	516	5
+9	162	516	5	518	13
