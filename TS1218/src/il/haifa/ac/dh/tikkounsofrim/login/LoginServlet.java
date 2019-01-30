@@ -25,9 +25,9 @@ public class LoginServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	static  UserDBase userValidationService = UserDBaseJDBC.instance();
-	static  ManuscriptProvider mp = ManuscriptProviderImpl.instance();
-	static TaskProvider taskProvider = new TaskProviderImpl(mp, userValidationService);
+	static  UserDBase userValidationService = null;
+	static  ManuscriptProvider mp = null;
+	static TaskProvider taskProvider = null;
     
 	
 //private TodoService todoService = new TodoService();
@@ -36,6 +36,9 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init(config);
 		FilePathUtils.setFilePath(config);
+		userValidationService = UserDBaseJDBC.instance();
+		mp = ManuscriptProviderImpl.instance();
+		taskProvider = new TaskProviderImpl(mp, userValidationService);
 	}
 
 	protected void doGet(HttpServletRequest request,

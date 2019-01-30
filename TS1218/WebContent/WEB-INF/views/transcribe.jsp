@@ -514,10 +514,10 @@ document.getElementById("work").className += " active";
 	
 
 
-<div id="infoPage"  style="float:left; width:39%;   vertical-align:middle;margin-left: 0px; padding-left:0px;" >
+<div id="infoPage"  style="overflow:auto;float:left; width:39%;   vertical-align:middle;margin-left: 0px; padding-left:0px;" >
 <!-- Less than 390 layout fails -->
 <div id="SC" hidden="hidden" class="tabcontent" style="background-color:<%= tab2color %>;height:100%;overflow:hidden" >
-  <h3 style="overflow:hidden">Special characters</h3>
+  <h3 style="overflow:auto">Special characters</h3>
   <p>under Construction.</p> 
   <ul>
   <li>1
@@ -572,34 +572,10 @@ document.getElementById("work").className += " active";
 </div>
 
 
-<div id="ADD" hidden="hidden" class="tabcontent" style="background-color: <%= tab4color %>;height:100%;" >
-  <h3>Additions &amp; Deletions</h3>
-  <p>Under Consruction.</p>
-  <ul>
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-   <li>1 
-   <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-   <li>1 
-   <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
-  <li>1
- 
-  </ul>
+<div id="ADD" hidden="hidden" class="tabcontent" style="overflow:auto; background-color: <%= tab4color %>;height:100%;" >
+ <%@include file="../views/HEB/Additions_Deletions.html" %>
 </div>
-<div id="FAQ" hidden="hidden" class="tabcontent" style="background-color: <%= tab5color %>; height:100%;" >
+<div id="FAQ" hidden="hidden" class="tabcontent" style="background-color: <%= tab5color %>; height:100%; overflow:scroll;" >
   <h3>Tips &amp; Links</h3>
   
   <p >Under Consruction.</p>
