@@ -7,7 +7,7 @@ package il.haifa.ac.dh.tikkounsofrim.model;
  */
 public class ChapterAssignment {
 
-	int chapater;
+	int chapter;
 	
 	int startPage;
 	
@@ -17,9 +17,9 @@ public class ChapterAssignment {
 	
 	int endLine;
 	
-	public ChapterAssignment(int chapater, int startPage, int startLine, int endPage, int endLine) {
+	public ChapterAssignment(int chapter, int startPage, int startLine, int endPage, int endLine) {
 		super();
-		this.chapater = chapater;
+		this.chapter = chapter;
 		this.startPage = startPage;
 		this.startLine = startLine;
 		this.endPage = endPage;
@@ -30,7 +30,7 @@ public class ChapterAssignment {
 	 * @return the chapater
 	 */
 	public int getChapater() {
-		return chapater;
+		return chapter;
 	}
 
 	/**
