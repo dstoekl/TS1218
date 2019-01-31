@@ -85,13 +85,15 @@ public class TaskProviderImpl implements TaskProvider {
 	}
 	
 	private Task getFreeTask(TikunUser user, ManuscriptPlace place) {
-		Task task = new Task(user, place, null, null);
-		if (checkIfFree(place)) {
-			return task;
+		Task task = new Task(user, place, null, null);		
+		while (true) {
+			if (checkIfFree(task.getPlace())) {
+				return task;
+			}
+			
+			// else, place not free
+			task = getNextTask(task);		
 		}
-		
-		// else, place not free
-		return getNextTask(task);
 	}
 
 	private ManuscriptPlace lookup(int book, int chapter) {

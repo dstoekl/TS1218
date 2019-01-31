@@ -88,6 +88,9 @@ public interface TaskProvider {
 		public int getNumberofPagesDone() {
 			return pageNumber - startPageNumber;
 		}
+		public ManuscriptPlace getPlace() {
+			return new ManuscriptPlace(mId.getName(), pageNumber, lineNumber);
+		}
 		
 		
 	}
