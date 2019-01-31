@@ -87,7 +87,7 @@ setTimeout(function () {
           <div id="special1"  class="tabcontent">
             <h3 style="overflow:hidden">Special characters</h3>
             <p>under Construction.</p>
-           <%@include file="../views/${lang}/ADD/ADD.jspf"%>
+           <jsp:include page="../views/${lang}/ADD/ADD.jspf" />
           </div>
         </div>
         <div class="tab-pane fade" id="AB" role="tabpanel" aria-labelledby="AB-tab">
@@ -102,7 +102,7 @@ setTimeout(function () {
         <div class="tab-pane fade" id="ADD" role="tabpanel" aria-labelledby="ADD-tab">
           <div id="ADD1"  class="tabcontent">
             <h3>Marked Text</h3>
-            <%@include file="../views/${lang}/ADD/ADD.jspf"%>
+            <jsp:include page="../views/${lang}/ADD/ADD.jspf" />
             
           </div>
         </div>
@@ -118,6 +118,11 @@ setTimeout(function () {
       </div>
     </div>
 
+
+
+
+
+<!-- Column Two work area -->
     <div id="transcribe" class="container col d-flex flex-column justify-content-between w-73">
       <div class="flex-fill d-flex flex-column justify-content-around">
         <div class="w-100 p-3">
@@ -193,8 +198,8 @@ setTimeout(function () {
                 <label>If you wish to skip this line without correcting, press ‘Skip’.</label>
 
                 <div id="activity-buttons" class="mt-2 d-flex justify-content-between">
-                  <button type="submit" class="btn btn-primary" value="Done">Done</button>
-                  <button type="submit" class="btn btn-primary" value="Skip">Skip</button>
+                  <button type="submit" class="btn btn-primary" name="status" value="Done">Done</button>
+                  <button type="submit" class="btn btn-primary" name="status" value="Skip">Skip</button>
                 </div>
                  </div>
 </form>

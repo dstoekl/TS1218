@@ -5,6 +5,7 @@
 	<script type="text/javascript">
 document.getElementById("task").className += " active";
  </script>
+ <%@include file="../common/navigation.jspf"  %>
     <div>
     <h1>Information about the Transcription Task</h1>
     

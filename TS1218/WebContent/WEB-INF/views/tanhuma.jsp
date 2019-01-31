@@ -5,7 +5,7 @@
 	<script type="text/javascript">
 document.getElementById("tanhuma").className += " active";
  </script>
-
+ <%@include file="../common/navigation.jspf"  %>
     <div >
     <h1>Information about Midrash Tanhuma</h1>
     

@@ -47,11 +47,13 @@ public class LoginServlet extends HttpServlet {
 		if(newlang != null) {
 			saveRequestParameterInSession(request, "lang");
 			String oldpage = (String) request.getSession().getAttribute("page");
+			System.out.println("New Lang"+newlang);
 			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
 			return;
 		} else {
 			if(currentlang == null) {
 				//TODO change to HE
+				System.out.println("No Lang"+newlang);
 				request.getSession().setAttribute("lang", "EN");
 				
 			}

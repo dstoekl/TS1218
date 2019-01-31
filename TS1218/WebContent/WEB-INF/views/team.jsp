@@ -5,6 +5,7 @@
 	<script type="text/javascript">
 document.getElementById("team").className += " active";
  </script>
+ <%@include file="../common/navigation.jspf"  %>
     <div >
     <h1>The Tikkoun Sofrim Team!</h1>
     

@@ -112,7 +112,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String transcribed = request.getParameter("transcribed");
-		int status = determineStatus(request);
+		
 		int pageNumber= (int) request.getSession().getAttribute("manuscriptPage");
 		int lineNumber= (int) request.getSession().getAttribute("manuscriptLine");
 		TikunUser user= (TikunUser) request.getSession().getAttribute("user");
@@ -134,6 +134,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 			transcribed = "";
 			
 		}
+		int status = determineStatus(request);
 		start = (long) request.getSession().getAttribute("starttime");
 		userDB.addTranscription(user.getId(), System.currentTimeMillis(), place, version, automaticTranscription, transcribed, status,start);
 		System.out.println("!!!!CrowdSourceData: user-"+user.getId()+" status="+status+",page-"+pageNumber+",line-"+lineNumber+",transcribed-"+transcribed
@@ -162,15 +163,10 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 			
 		}
 		switch (status) {
-		case "AC":
+		case "Done":
 			retVal = 3;
 			break;
-		case "NE":
-			retVal = 2;
-			break;
-		case "PC":
-			retVal = 1;
-			break;	
+		
 		case "Skip":
 			retVal = 0;
 			break;
