@@ -18,8 +18,7 @@
 </head>
 
 
-<body style="background-color:<%= bgcolor %>">
-	<%@ include file="../common/navigation.jspf"%>
+	<%@ include file="../common/header.jspf"%>
 	<script type="text/javascript">
 document.getElementById("project").className += " active";
  
@@ -38,8 +37,3 @@ document.getElementById("project").className += " active";
 <!-- img src='<c:url value="/images/elijah.png" ></c:url>' /-->
 		<%@ include file="../common/footer.jspf"%>
 
-	
-
-</body>
-
-</html>

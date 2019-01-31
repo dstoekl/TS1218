@@ -1,25 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Tikoun Sofrim- Links</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">
-<%@ include file="../common/colors.jspf"%>
-<style>
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #f5f5f5;
-}
-</style>
-</head>
 
-
-<body style="background-color: #f5deb3;color:<%= txtcolor %>">
-	<%@ include file="../common/navigation.jspf"%>
+	<%@ include file="../common/header.jspf"%>
 	<script type="text/javascript">
 document.getElementById("links").className += " active";
  
