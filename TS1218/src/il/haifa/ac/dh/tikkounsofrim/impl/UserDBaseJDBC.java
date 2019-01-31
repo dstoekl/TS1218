@@ -333,17 +333,14 @@ public class UserDBaseJDBC implements UserDBase {
 			connect();
 			statement = connect.createStatement();
 			resultSet = statement
-	                 .executeQuery("select count(*) from tikkoun.transcriptions where manuscript = '"+ place.manuscriptId +
-	                		 "'and page = '"+place.page+ 
-	                		 "'and line = '"+place.line+ 
-	                		 
-	                		 "'and status <> '0'");
-			boolean empty = resultSet.last();
-			if (!empty) {
+	                 .executeQuery("select count(*) from tikkoun.transcriptions where manuscript = '"+ place.manuscriptId.getName() +
+	                		 "' and page = "+place.page+ 
+	                		 " and line = "+place.line+ 
+	                		 "");
+//	                		 "'and status <> '0'");
+			if (resultSet.last()) {
 				int rowcount = resultSet.getInt(1);
-				if (rowcount > 0) {
 					return rowcount;
-				} 
 			}
 			
 		} catch (SQLException e) {
