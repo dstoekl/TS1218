@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO set user name
-		
+		String userid =null;
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -71,12 +71,18 @@ public class LoginServlet extends HttpServlet {
 			saveRequestParameterInSession(request, "b");
 			saveRequestParameterInSession(request, "c");
 
-			String userid = (String) request.getSession().getAttribute("userid");
+			userid = (String) request.getSession().getAttribute("userid");
 			if (userid != null && userid != "") {
 				page = "views/transcribe.jsp";
 			} else {
 				page = "views/login.jsp";
 			}
+		}
+		if(page == "views/logout.jsp") {
+			
+			 int userlinecount =UserDBaseJDBC.instance().getCount(userid);
+			 System.out.println("USERid:count"+userid+":"+userlinecount);
+			 request.getSession().setAttribute("userlinecount", userlinecount);
 		}
 		System.out.println("page=" + page);
 		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);

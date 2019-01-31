@@ -2,8 +2,10 @@
 <%-- <fmt:setLocale value="he"/> --%>
 <%-- <fmt:setBundle basename="messages"></fmt:setBundle> --%>
 <nav class="top-banner navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="navbar-brand" href="#" title="Tikkoun Sofrim">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp" title="Tikkoun Sofrim">
+ 
       <img src="/TS1218/images/TS_logo_nobackground.png" class="d-inline-block align-top" alt="Tikkoun Sofrim logo">
+      <label class="mmsg" >Discover Ancient Hebrew Manuscripts<br>Try your skills at deciphering them</label>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,15 +36,15 @@
     <div>
       <ul class="nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{pageContext.request.contextPath}/LoginServlet?lang=EN" role="button" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath}/LoginServlet?lang=EN" role="button" aria-haspopup="false"
             aria-expanded="false">EN</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{pageContext.request.contextPath}/LoginServlet?lang=HE">HE</a>
-            <a class="dropdown-item" href="{pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/LoginServlet?lang=HE">HE</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/LoginServlet?page=views/logout.jsp">Logout</a>
         </li>
       </ul>
     </div>
