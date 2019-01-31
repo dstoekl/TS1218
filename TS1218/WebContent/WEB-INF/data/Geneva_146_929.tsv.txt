@@ -1,7 +1,7 @@
-actual_929_ch_assignment	929_chapter_number	Genave_Page_begin	Geneva_line_begin	Geneva_Page_end	Geneva_line_end
+actual_929_ch_assignment	929_chapter_number	Geneva_Page_begin	Geneva_line_begin	Geneva_Page_end	Geneva_line_end
 1	154	490	7	492	6
-2	155	492	6	494	14
-3	156	494	15	499	10
+2	155	492	6	495	14
+3	156	495	15	499	10
 4	157	499	10	501	16
 5	158	501	16	502	2
 6	159	502	2	512	17
@@ -17,7 +17,7 @@ actual_929_ch_assignment	929_chapter_number	Genave_Page_begin	Geneva_line_begin	
 16	169	537	7	540	10
 17	170	540	10	541	8
 18	171	541	8	542	14
-19	172	542	14	547	2
+19	172	542	15	547	2
 20	173	547	2	551	15
 21	174	551	16	553	13
 22	175	553	13	554	18
@@ -27,7 +27,7 @@ actual_929_ch_assignment	929_chapter_number	Genave_Page_begin	Geneva_line_begin	
 26	179	567	8	569	19
 27	180	570	1	572	7
 28	181	572	8	573	12
-29	182	573	13	574	14
+29	182	573	12	574	14
 30	183	574	15	575	15
 31	184	588	6	590	16
 32	185	575	15	582	6
