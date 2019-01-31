@@ -122,7 +122,7 @@ setTimeout(function () {
       <div class="flex-fill d-flex flex-column justify-content-around">
         <div class="w-100 p-3">
           <div id="work-page" class="d-flex flex-column justify-content-between">
-            <div class="header mb-5">
+            <div class="header mb-4">
               <div>
                 This is an automatic transcription.
                 Please correct all errors
@@ -141,6 +141,8 @@ setTimeout(function () {
     });
 </script>
             </div>
+            <div>
+            <form action="${pageContext.request.contextPath}/TranscribeServlet" method="post" >
             <div class="mt-2">
               <input id="trw" type="text" oninput="trwChanged()" name="transcribed" dir="rtl" value="${transcribedline}"
                 style="font-family: Corsiva" class="w-100 p-2">
@@ -184,25 +186,27 @@ setTimeout(function () {
                 <label id="test">Font size</label>
               </div>
             </div>
-</div>
-            <div id="activity" class="mt-5 align-self-center w-60">
-              <form action="${pageContext.request.contextPath}/TranscribeServlet" method="post">
 
-                <label> Having corrected all errors, or if no errors found, press ‘Done’. </label>
+            <div id="activity" class="mt-2 align-self-center w-60">
+              
+                <label>Having corrected all errors, or if no errors found, press ‘Done’. </label>
                 <label>If you wish to skip this line without correcting, press ‘Skip’.</label>
 
-                <div id="activity-buttons" class="mt-4 d-flex justify-content-between">
-                  <button type="submit" class="btn btn-primary">Done</button>
-                  <button type="submit" class="btn btn-primary">Skip</button>
+                <div id="activity-buttons" class="mt-2 d-flex justify-content-between">
+                  <button type="submit" class="btn btn-primary" value="Done">Done</button>
+                  <button type="submit" class="btn btn-primary" value="Skip">Skip</button>
                 </div>
-
-              </form>
+                 </div>
+</form>
+              
+             
+              
             </div>
           </div>
         </div>
       </div>
      
-    
+    </div>
   
   
   <%@ include file="../common/footer2.jspf"%>
