@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<
-	<%@ include file="../common/header.jspf"%>
+<%@include file="../common/header.jspf"  %>
+<body  class="flex-column d-flex justify-content-between">
+<%@include file="../common/navigation.jspf"  %>
+
 	<script type="text/javascript">
 document.getElementById("htr").className += " active";
  

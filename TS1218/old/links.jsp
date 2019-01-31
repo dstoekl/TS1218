@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-	<%@ include file="../common/header.jspf"%>
+<%-- 	<%@ include file="../common/header.jspf"%> --%>
 	<script type="text/javascript">
 document.getElementById("links").className += " active";
  
@@ -21,7 +21,7 @@ document.getElementById("links").className += " active";
 
 	</div>
 
-		<%@ include file="../common/footer.jspf"%>
+<%-- 		<%@ include file="../common/footer.jspf"%> --%>
 
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>

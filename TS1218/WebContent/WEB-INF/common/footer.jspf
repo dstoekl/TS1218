@@ -1,14 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-<footer class="footer1" >
-	 <div class="partner-logos w-100 d-flex justify-content-between">
-        <img class="tslogos" src="/TS1218/images/logos/e-lijah-vertical.jpg" alt="e-lijah DH lab Haifa">
-        <img class="tslogos"  src="/TS1218/images/logos/haifa-logo-small.png" alt="Haifa University">
-        <img  class="tslogos" src="/TS1218/images/logos/mada.jpg" alt="Ministry of Science and Technology">
-        <img class="tslogos"  src="/TS1218/images/logos/msles.jpg" alt="">
-        <img  class="tslogos" src="/TS1218/images/logos/mdae.jpg" alt="a">
-        <img  class="tslogos" src="/TS1218/images/logos/logo-ecole-national.jpg" alt="">
-        <img  class="tslogos" src="/TS1218/images/logos/ep.png" alt="">
+<footer class="footer" >
+<div class="partner-logos w-100 d-flex justify-content-between">
+<a href="" target="_blank"><img class="tslogos"  src="/TS1218/images/logos/e-lijah-vertical.jpg" alt="e-lijah DH lab Haifa"></a>
+<a href="" target="_blank"><img class="tslogos"  src="/TS1218/images/logos/haifa-logo-small.png" alt="Haifa University"> </a>
+<a href="" target="_blank"><img  class="tslogos" src="/TS1218/images/logos/mada.jpg" alt="Ministry of Science and Technology">      </a>
+<a href="" target="_blank"> <img  class="tslogos" src="/TS1218/images/logos/mada.jpg" alt="Ministry of Science and Technology">  </a>
+<a href="" target="_blank"><img class="tslogos"  src="/TS1218/images/logos/msles.jpg" alt="">     </a>
+<a href="" target="_blank"><img  class="tslogos" src="/TS1218/images/logos/mdae.jpg" alt="a">  </a>
+<a href="" target="_blank"><img  class="tslogos" src="/TS1218/images/logos/logo-ecole-national.jpg" alt=""> </a>
+<a href="" target="_blank"><img  class="tslogos" src="/TS1218/images/logos/ep.png" alt=""></a> 
+               
+               
+        
+       
+        
       </div>
 </footer>
 
