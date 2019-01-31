@@ -1,10 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-	<%@ include file="../common/header.jspf"%>
+ <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+<%@include file="../common/header.jspf"  %>
+<body  class="flex-column d-flex justify-content-between">
 	<script type="text/javascript">
 document.getElementById("team").className += " active";
- 
-</script>
+ </script>
     <div >
     <h1>The Tikkoun Sofrim Team!</h1>
     

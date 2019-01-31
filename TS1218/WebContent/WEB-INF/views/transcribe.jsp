@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
 <%@include file="../common/header.jspf"  %>
+<body onload="onloadResize();" class="flex-column d-flex justify-content-between">
+<%@include file="../common/navigation.jspf"  %>
 <div id="transcribe-wrapper" class="align-self-start  w-100 mt-2 p-2 row">
     <div id="info-page" class="container w-33 col-sm col-sm-auto">
       <ul class="nav nav-tabs flex-wrap" role="tablist">

@@ -1,5 +1,8 @@
-
-	<%@ include file="../common/header.jspf"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+<%@include file="../common/header.jspf"  %>
+<body  class="flex-column d-flex justify-content-between">
+<%@include file="../common/navigation.jspf"  %>
     <div class="w-30">
     <h2><fmt:message key="login.welcome.header"/></h2>
     
