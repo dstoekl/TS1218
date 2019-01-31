@@ -84,7 +84,7 @@ public class UserDBaseJDBC implements UserDBase {
 		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 		connect = DriverManager
 		        .getConnection("jdbc:mysql://localhost/tikkoun?"
-		                + "user=tikun&password=Paris2019!&serverTimezone=UTC");
+		                + "user=tikun&password=Paris2019!&serverTimezone=UTC&characterEncoding=utf-8&useUnicode=true");
 	}
 	
 	}
