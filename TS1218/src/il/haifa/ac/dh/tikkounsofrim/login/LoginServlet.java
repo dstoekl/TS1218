@@ -44,26 +44,27 @@ public class LoginServlet extends HttpServlet {
 		String page = request.getParameter("page");
 		if(page==null) {
 			request.getSession().setAttribute("username",request.getParameter("u"));
-			String mname = request.getParameter("m");
-			if(mname != null && mname != "") {
-				if (mname.startsWith("geneva")) {
-					request.setAttribute("m1","selected");
-				}
-				if (mname.startsWith("parma")) {
-					request.setAttribute("m2","selected");
-				}
-				if (mname.startsWith("vatican")) {
-					request.setAttribute("m2","selected");
-				}
-				request.setAttribute("p",request.getParameter("p"));
-				request.setAttribute("l",request.getParameter("l"));
-			}
 			String ntnChapter = request.getParameter("ntn");
 			if(ntnChapter != null &&  ntnChapter != "") {
 				request.getSession().setAttribute("ntn", ntnChapter);
 			}
-			String direct = request.getParameter("direct");
-			if(direct != null && direct != "") {
+//			String mname = request.getParameter("m");
+//			if(mname != null && mname != "") {
+//				if (mname.startsWith("geneva")) {
+//					request.setAttribute("m1","selected");
+//				}
+//				if (mname.startsWith("parma")) {
+//					request.setAttribute("m2","selected");
+//				}
+//				if (mname.startsWith("vatican")) {
+//					request.setAttribute("m2","selected");
+//				}
+//				request.setAttribute("p",request.getParameter("p"));
+//				request.setAttribute("l",request.getParameter("l"));
+//			}
+			
+			String userid = (String) request.getSession().getAttribute("userid");
+			if(userid != null && userid != "") {
 				page= "views/transcribe.jsp";
 			} else {
 				page= "views/login.jsp";

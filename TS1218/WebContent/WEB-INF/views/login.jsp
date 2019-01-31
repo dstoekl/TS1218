@@ -1,39 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<fmt:setLocale value="he"/>
-<fmt:setBundle basename="messages"></fmt:setBundle>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Tikoun Sofrim</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">
-	
-        <link rel="stylesheet" type="text/css" href="views/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="views/css/animate-custom.css" />
-<%@ include file="../common/colors.jspf"%>
-<style>
-.likert li {
-  float: left;
-  list-style-type: none;
-  margin-right:10px;
-}
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #f5f5f5;
-}
-</style>
-</head>
-
-
-<body style="background-color:<%= bgcolor %>; font-family: Georgia;">
-	<%@ include file="../common/navigation.jspf"%>
-    <div style="float:left ;  width:33%; margin: 40px; background-color: <%= bgcolor %>; color:<%= txtcolor %>;text-align: center;">
+	<%@ include file="../common/header.jspf"%>
+    <div class="w-30">
     <h2><fmt:message key="login.welcome.header"/></h2>
     
     <p>Help us train a computerized reading of Hebrew manuscripts, by correcting errors in the initial automatic reading
@@ -49,7 +16,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                           <form autocomplete="on" style="padding-left: 15px; background-color:<%= bgcolor %> ;margin-top: 1px;float:left; width:98%" action="${pageContext.request.contextPath}/LoginServlet" method="post">
+                           <form autocomplete="on" style="padding-left: 15px; margin-top: 1px;float:left; width:98%" action="${pageContext.request.contextPath}/LoginServlet" method="post">
                                 <h4>Log in</h4> 
                                <p style="font-weight:bold; font-size: large; color:red;">${errorMessageLogin}</p>
                                <p>
@@ -83,21 +50,11 @@
 								</p>
 								<p> 
 								(Optional)
-								<label for="book" > 929 Chapter </label>
+								
                                 
-                                 <select name="ntn" id="ntn">
-                                 <option value=""> 
-                                 <option ${b1} hidden="hidden" value="1">Genesis
-                                  <option ${b2}  hidden="hidden" value="2">Exodus
-                                   <option ${b3}  hidden="hidden" value="3">Leviticus
-                                 <option ${b4}  hidden="hidden" value="4">Numbers
-                                  <option ${b5} value="5">154
-                                   
-                                 </select>
+                                 <label  for="ntn" > 929 Chapter </label>
                                 
-                                 <label hidden="hidden" for="chapter" > Chapter </label>
-                                
-                                 <input hidden="hidden" maxlength="2" id="chapter" name="p"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="${c}" />
+                                 <input maxlength="3" id="ntn" name="ntn"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="${ntn}" />
                                  
 								</p>
                                 <p class="login button"> 
@@ -111,7 +68,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                        <form autocomplete="on" style="padding-left: 15px; background-color:<%= bgcolor %> ;margin-top: 1px;float:left; width:98%" action="${pageContext.request.contextPath}/LoginServlet" method="post">
+                        <form autocomplete="on" style="padding-left: 15px; margin-top: 1px;float:left; width:98%" action="${pageContext.request.contextPath}/LoginServlet" method="post">
                             
                                 <h4> Register</h4>
                               <p style="font-weight:bold; font-size: large; color:red;">${errorMessageRegister}</p>
@@ -131,7 +88,7 @@
                                 </p>
                                 <br>
                                 <fieldset>
-                                <legend style="font-size:15px; font-weight:bold;color:<%= txtcolor%>">Demographics (Optional)</legend>
+                                <legend style="font-size:15px; font-weight:bold;">Demographics (Optional)</legend>
                                 <label for="age" > Age </label>
                                  <input maxlength="2" id="age" name="age" style="padding:0px;width:45px;height:25px;" type="number" min="1" max="120" placeholder="eg. 75" />
   <br>
