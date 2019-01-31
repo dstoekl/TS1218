@@ -81,7 +81,7 @@ setTimeout(function () {
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="special" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade w-33" id="special" role="tabpanel" aria-labelledby="profile-tab">
           <div id="special1"  class="tabcontent">
             <h3 style="overflow:hidden">Special characters</h3>
             <p>under Construction.</p>
