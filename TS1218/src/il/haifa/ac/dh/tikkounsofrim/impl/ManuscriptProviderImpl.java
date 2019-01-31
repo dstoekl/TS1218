@@ -46,7 +46,11 @@ public class ManuscriptProviderImpl implements ManuscriptProvider {
 	public TranscribedString getTranscribedLine(ManuscriptID id, int pageNumber, int lineNumber, int tagLevel) {
 		// TODO Auto-generated method stub
 		TranscribedString ts = getManuscriptDescription(id).getTranscribedLine(pageNumber, lineNumber, tagLevel);
-		System.out.println("FRom data -"+ts);
+		if(ts != null) {
+			System.out.println("From data -"+ts.getString());
+		} else {
+			System.out.println("From data - null");
+		}
 		return ts;  
 		
 		

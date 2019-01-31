@@ -38,7 +38,26 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO set user name
+		
+		
 		request.setCharacterEncoding("UTF-8");
+		
+		String newlang= request.getParameter("lang");
+		String currentlang = (String) request.getSession().getAttribute("lang");
+		if(newlang != null) {
+			saveRequestParameterInSession(request, "lang");
+			String oldpage = (String) request.getSession().getAttribute("page");
+			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
+			return;
+		} else {
+			if(currentlang == null) {
+				//TODO change to HE
+				request.getSession().setAttribute("lang", "EN");
+				
+			}
+		}
+		
+		
 		String page = request.getParameter("page");
 		if (page == null) {
 			request.getSession().setAttribute("username", request.getParameter("u"));

@@ -87,7 +87,7 @@ setTimeout(function () {
           <div id="special1"  class="tabcontent">
             <h3 style="overflow:hidden">Special characters</h3>
             <p>under Construction.</p>
-           <%@include file="../views/HEB/ADD/ADD.jspf"%>
+           <%@include file="../views/${lang}/ADD/ADD.jspf"%>
           </div>
         </div>
         <div class="tab-pane fade" id="AB" role="tabpanel" aria-labelledby="AB-tab">
@@ -102,7 +102,7 @@ setTimeout(function () {
         <div class="tab-pane fade" id="ADD" role="tabpanel" aria-labelledby="ADD-tab">
           <div id="ADD1"  class="tabcontent">
             <h3>Marked Text</h3>
-            <%@include file="../views/HEB/ADD/ADD.jspf"%>
+            <%@include file="../views/${lang}/ADD/ADD.jspf"%>
             
           </div>
         </div>
