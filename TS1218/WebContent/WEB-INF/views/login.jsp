@@ -29,37 +29,38 @@
                                     <label for="password" class="youpasswd" data-icon="p"> Password: </label>
                                     <input id="password" name="password" style="width:125px;" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                </p>
-<!--                                 <p class="keeplogin">  -->
+<!--   Do not Remove these comments needed for future version                              <p class="keeplogin">  -->
 <!-- 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />  -->
 <!-- 									<label for="loginkeeping">Keep me logged in</label> -->
 <!-- 								</p> -->
- 								<p> 
-								(Optional)
-								<label for="manuscript" > Manuscript </label>
+ 
+<!--  								<p>  -->
+<!-- 								(Optional) -->
+<!-- 								<label for="manuscript" > Manuscript </label> -->
                                 
-                                 <select name="m" id="manuscript">
-                                 <option value=" "> 
-                                 <option ${m1} value="Geneva146">Geneva 146
-                                  <option ${m2} value="Parma">Parma 111
-                                   <option ${m3} value="Vatican"> Vatican 22
+<!--                                  <select name="m" id="manuscript"> -->
+<!--                                  <option value=" ">  -->
+<%--                                  <option ${m1} value="Geneva146">Geneva 146 --%>
+<%--                                   <option ${m2} value="Parma">Parma 111 --%>
+<%--                                    <option ${m3} value="Vatican"> Vatican 22 --%>
                                  
-                                 </select>
+<!--                                  </select> -->
                                 
-                                 <label for="p" > Page </label>
+<!--                                  <label for="p" > Page </label> -->
                                 
-                                 <input maxlength="4" id="p" name="p"  style="padding:0px;width:60px;height:25px" type="number" min="1" max="9000"  value="${p}" />
-                                  <label for="l" > Line </label>
-                                 <input maxlength="3" id="l" name="l" style="padding:0px;width:45px;height:25px;" type="number" min="1" max="150"  value="${l}" />
-								</p>
-								<p> 
-								(Optional)
+<%--                                  <input maxlength="4" id="p" name="p"  style="padding:0px;width:60px;height:25px" type="number" min="1" max="9000"  value="${p}" /> --%>
+<!--                                   <label for="l" > Line </label> -->
+<%--                                  <input maxlength="3" id="l" name="l" style="padding:0px;width:45px;height:25px;" type="number" min="1" max="150"  value="${l}" /> --%>
+<!-- 								</p> -->
+<!-- 								<p>  -->
+<!-- 								(Optional) -->
 								
                                 
-                                 <label  for="ntn" > 929 Chapter </label>
+<!--                                  <label  for="ntn" > 929 Chapter </label> -->
                                 
-                                 <input maxlength="3" id="ntn" name="ntn"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="${ntn}" />
+<%--                                  <input maxlength="3" id="ntn" name="ntn"  style="padding:0px;width:30px;height:25px" type="number" min="1" max="99"  value="${ntn}" /> --%>
                                  
-								</p>
+<!-- 								</p> -->
                                 <p class="login button"> 
                                     <input  name="login" style="align-self: center;width:150px; margin-left:25px;" type="submit"  value="Start correcting" /> 
 								</p>
