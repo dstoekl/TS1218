@@ -20,7 +20,7 @@ public class TaskProviderImpl implements TaskProvider {
 	@Override
 	public Task getTask(TikunUser user) {
 
-		ManuscriptPlace seed = new ManuscriptPlace(ChapterAssignmentDataImpl.GENEVA_MANUSRIPT_NAME, 7, 13);
+		ManuscriptPlace seed = getDeafultManuscriptPlace();
 		seed = getNextFree(seed);
 		return getTask(user, seed);
 	}
@@ -96,8 +96,15 @@ public class TaskProviderImpl implements TaskProvider {
 
 	private ManuscriptPlace lookup(int book, int chapter) {
 		// TODO do actual lookup
-		ManuscriptPlace seed = new ManuscriptPlace(ChapterAssignmentDataImpl.GENEVA_MANUSRIPT_NAME, 7, 13);
+		ManuscriptPlace seed = getDeafultManuscriptPlace();
 		return seed;
+	}
+
+	/**
+	 * @return
+	 */
+	private ManuscriptPlace getDeafultManuscriptPlace() {
+		return new ManuscriptPlace(ChapterAssignmentDataImpl.GENEVA_MANUSRIPT_NAME, 7, 13);
 	}
 
 	/**
@@ -107,6 +114,9 @@ public class TaskProviderImpl implements TaskProvider {
 	 */
 	private ManuscriptPlace lookup(int ntnChapterId) {
 		ChapterAssignment chapterAssignment = chapterAssignmentData.getChapterAssignment(ntnChapterId);
+		if (chapterAssignment == null) {
+			return getDeafultManuscriptPlace();
+		}
 
 		ManuscriptPlace seed = new ManuscriptPlace(chapterAssignmentData.getName(),
 				chapterAssignment.getStartPage(), chapterAssignment.getStartLine());

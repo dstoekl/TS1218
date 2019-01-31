@@ -12,20 +12,18 @@ import il.haifa.ac.dh.tikkounsofrim.impl.*;
 import il.haifa.ac.dh.tikkounsofrim.model.*;
 import il.haifa.ac.dh.tikkounsofrim.model.TaskProvider.Task;
 
-
-@WebServlet(urlPatterns = {"/LoginServlet","/index.html"})
+@WebServlet(urlPatterns = { "/LoginServlet", "/index.html" })
 public class LoginServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	static  UserDBase userValidationService = null;
-	static  ManuscriptProvider mp = null;
+	static UserDBase userValidationService = null;
+	static ManuscriptProvider mp = null;
 	static TaskProvider taskProvider = null;
-    
-	
-//private TodoService todoService = new TodoService();
+
+	// private TodoService todoService = new TodoService();
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
@@ -37,74 +35,74 @@ public class LoginServlet extends HttpServlet {
 		taskProvider = new TaskProviderImpl(mp, chapterAssignmentData, userValidationService);
 	}
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		//TODO set user name
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO set user name
 		request.setCharacterEncoding("UTF-8");
 		String page = request.getParameter("page");
-		if(page==null) {
-			request.getSession().setAttribute("username",request.getParameter("u"));
-			String ntnChapter = request.getParameter("ntn");
-			if(ntnChapter != null &&  ntnChapter != "") {
-				request.getSession().setAttribute("ntn", ntnChapter);
-			}
-//			String mname = request.getParameter("m");
-//			if(mname != null && mname != "") {
-//				if (mname.startsWith("geneva")) {
-//					request.setAttribute("m1","selected");
-//				}
-//				if (mname.startsWith("parma")) {
-//					request.setAttribute("m2","selected");
-//				}
-//				if (mname.startsWith("vatican")) {
-//					request.setAttribute("m2","selected");
-//				}
-//				request.setAttribute("p",request.getParameter("p"));
-//				request.setAttribute("l",request.getParameter("l"));
-//			}
+		if (page == null) {
+			request.getSession().setAttribute("username", request.getParameter("u"));
 			
+			saveRequestParameterInSession(request, "ntn");
+			saveRequestParameterInSession(request, "m");
+			saveRequestParameterInSession(request, "p");
+			saveRequestParameterInSession(request, "l");
+			saveRequestParameterInSession(request, "b");
+			saveRequestParameterInSession(request, "c");
+
 			String userid = (String) request.getSession().getAttribute("userid");
-			if(userid != null && userid != "") {
-				page= "views/transcribe.jsp";
+			if (userid != null && userid != "") {
+				page = "views/transcribe.jsp";
 			} else {
-				page= "views/login.jsp";
+				page = "views/login.jsp";
 			}
 		}
-		System.out.println("page="+page);
-		request.getRequestDispatcher("/WEB-INF/"+page).forward(
-				request, response);
-		
+		System.out.println("page=" + page);
+		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);
+
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	/**
+	 * @param request
+	 * @param param
+	 */
+	private void saveRequestParameterInSession(HttpServletRequest request, String param) {
+		String value = request.getParameter(param);
+		if (value != null) {
+			request.getSession().setAttribute(param, value);
+		}
+		else {
+			request.getSession().removeAttribute(param);		
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String login = request.getParameter("login");
-		System.out.println("login exists "+login);
-		if(login != null) {
+		System.out.println("login exists " + login);
+		if (login != null) {
 			handleLogin(request, response);
 			return;
 		}
 		String register = request.getParameter("register");
-		if(register != null) {
+		if (register != null) {
 			handleRegister(request, response);
 			return;
 		}
-		
+
 		String page = request.getParameter("page");
-		if(page==null) {
-			page= "views/login.jsp";
+		if (page == null) {
+			page = "views/login.jsp";
 		}
-		System.out.println("page2="+page);
-		request.getRequestDispatcher("/WEB-INF/"+page).forward(
-				request, response);
+		System.out.println("page2=" + page);
+		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);
 	}
-	
-	
+
 	private int convert(String str) {
-		if (str!= null && str != "" && str != " ") {
+		if (str != null && str != "" && str != " ") {
 			try {
-				int i =Integer.parseInt(str);
+				int i = Integer.parseInt(str);
 				return i;
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
@@ -114,16 +112,17 @@ public class LoginServlet extends HttpServlet {
 		return 0;
 	}
 
-	private void handleRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void handleRegister(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String name = request.getParameter("usernamesignup");
 		String password = request.getParameter("passwordsignup");
 		String email = request.getParameter("emailsignup");
 		String age = request.getParameter("age");
 		String hebrew = request.getParameter("hebrew");
 		String midrashim = request.getParameter("midrashim");
-		
-		UserInfo uInfo = new UserInfo(convert(age),convert(hebrew), convert(midrashim));
-		if(!userValidationService.checkUser(name)) {
+
+		UserInfo uInfo = new UserInfo(convert(age), convert(hebrew), convert(midrashim));
+		if (!userValidationService.checkUser(name)) {
 			int userRegisterd = userValidationService.registerUser(name, password, email, uInfo);
 			if (userRegisterd != 0) {
 				request.setAttribute("errorMessageRegister", "Problem registering");
@@ -135,14 +134,10 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			request.setAttribute("errorMessageRegister", "Invalid Username exists");
 			response.sendRedirect("/TS1218/LoginServlet#toregister");
-			
+
 		}
 
-		
-		
 	}
-
-	
 
 	private void handleLogin(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
@@ -157,37 +152,36 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("name", name);
 			request.getSession().setAttribute("user", user);
 			request.getSession().setAttribute("userDB", userValidationService);
-			int b =convert(request.getParameter("b"));
-			int c =convert(request.getParameter("c"));
-			
-			int ntn = convert((String)request.getSession().getAttribute("ntn"));
+			int b = convert((String) request.getSession().getAttribute("b"));
+			int c = convert((String) request.getSession().getAttribute("c"));
 
-			if (task== null && ntn > 0) {
-				task =  taskProvider.getTask(user, ntn);
-			} 
+			int ntn = convert((String) request.getSession().getAttribute("ntn"));
 
-			if( task== null && b > 0 &&  c > 0 ) {
-				task =  taskProvider.getTask(user, b,c);
-			} 
-			String m = request.getParameter("m");
-			int p =convert(request.getParameter("p"));
-			int l =convert(request.getParameter("l"));
-			if( task== null & m!= null && m.length() > 0  && p > 0  && l > 0 ) {
-				task =  taskProvider.getTask(user,new ManuscriptPlace( m,p,l));
-			} 
-			
-			if(task == null) {
+			if (task == null && ntn > 0) {
+				task = taskProvider.getTask(user, ntn);
+			}
+
+			if (task == null && b > 0 && c > 0) {
+				task = taskProvider.getTask(user, b, c);
+			}
+			String m = (String) request.getSession().getAttribute("m");
+			int p = convert((String) request.getSession().getAttribute("p"));
+			int l = convert((String) request.getSession().getAttribute("l"));
+			if (task == null && m != null && m.length() > 0 && p > 0 && l > 0) {
+				task = taskProvider.getTask(user, new ManuscriptPlace(m, p, l));
+			}
+
+			if (task == null) {
 				task = taskProvider.getTask(user);
 
 			}
 			request.getSession().setAttribute("taskProvider", taskProvider);
-			request.getSession().setAttribute("task",task);
+			request.getSession().setAttribute("task", task);
 			response.sendRedirect("/TS1218/TranscribeServlet");
 		} else {
 			request.setAttribute("errorMessageLogin", "Invalid Credentials!");
-			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(
-					request, response);
-			
+			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+
 		}
 	}
 

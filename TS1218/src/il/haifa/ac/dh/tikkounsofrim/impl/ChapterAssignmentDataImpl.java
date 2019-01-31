@@ -17,7 +17,7 @@ public class ChapterAssignmentDataImpl implements ChapterAssignmentData {
 
 	public final static String TSV_GENEVA_FILENAME = "Geneva_146_929.tsv.txt";
 	
-	public final static String GENEVA_MANUSRIPT_NAME = "Geneva 146";
+	public final static String GENEVA_MANUSRIPT_NAME = "Geneva_146";
 
 	private Map<Integer, ChapterAssignment> chapterLines = new HashMap<Integer, ChapterAssignment>();
 

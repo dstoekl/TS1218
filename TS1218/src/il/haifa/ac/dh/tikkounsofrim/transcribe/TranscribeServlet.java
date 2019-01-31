@@ -28,7 +28,6 @@ public class TranscribeServlet extends HttpServlet {
 	
 //	static TranscriptionProvider transcriptionProvider =fi;
 	
-	static TikunUser user = new TikunUser("Alan");
 	long start = 0;
 
 	/**
@@ -116,7 +115,7 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 		int status = determineStatus(request);
 		int pageNumber= (int) request.getSession().getAttribute("manuscriptPage");
 		int lineNumber= (int) request.getSession().getAttribute("manuscriptLine");
-	//	TikunUser user= (TikunUser) request.getSession().getAttribute("user");
+		TikunUser user= (TikunUser) request.getSession().getAttribute("user");
 		UserDBase userDB = (UserDBase) request.getSession().getAttribute("userDB");
 		Task task = (Task) request.getSession().getAttribute("task");
 		String version = (String) request.getSession().getAttribute("version");
