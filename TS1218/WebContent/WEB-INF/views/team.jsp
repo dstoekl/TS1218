@@ -20,7 +20,3 @@ document.getElementById("team").className += " active";
 		<%@ include file="../common/footer.jspf"%>
 
 	
-
-</body>
-
-</html>

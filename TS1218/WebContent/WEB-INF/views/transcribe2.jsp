@@ -206,10 +206,10 @@
 </div>
 
 
-<div id="ADD" hidden="hidden" class="tabcontent" style="overflow:auto; background-color: <%= tab4color %>;height:100%;" >
- <%@include file="../views/HEB/ADD/ADD.jspf" %>
-</div>
-<div id="FAQ" hidden="hidden" class="tabcontent" style="background-color: <%= tab5color %>; height:100%; overflow:scroll;" >
+<%-- <div id="ADD" hidden="hidden" class="tabcontent" style="overflow:auto; background-color: <%= tab4color %>;height:100%;" > --%>
+<%--  <%@include file="TS1218/WEBC/views/HEB/ADD/ADD.jspf" %> --%>
+<!-- </div> -->
+<%-- <div id="FAQ" hidden="hidden" class="tabcontent" style="background-color: <%= tab5color %>; height:100%; overflow:scroll;" > --%>
   <h3>Tips &amp; Links</h3>
   
   <p >Under Consruction.</p>
