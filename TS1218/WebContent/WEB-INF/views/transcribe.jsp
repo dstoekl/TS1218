@@ -205,7 +205,7 @@ setTimeout(function () {
     
   
   
-  <%@ include file="../common/footer.jspf"%>
+  <%@ include file="../common/footer2.jspf"%>
 
 
   
