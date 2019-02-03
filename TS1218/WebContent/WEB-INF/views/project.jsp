@@ -2,13 +2,14 @@
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
 <%@include file="../common/header.jspf"%>
 <body>
-	<script type="text/javascript">
-		document.getElementById("project").className += " active";
-	</script>
+
 	<%@include file="../common/navigation.jspf"%>
+	<script type="text/javascript">
+		window.page_name = 'project';
+		$("[data-link='project']").addClass('active');
+	</script>
 
-
-	<div class="container">
+	<div class="container scrollable">
 		<p>
 			<strong>Tikkoun Sofrim</strong> is a joint French Israeli project
 			aimed to make Medieval Hebrew manuscripts openly and freely available
