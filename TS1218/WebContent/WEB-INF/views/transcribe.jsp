@@ -44,60 +44,6 @@
 							<script type="text/javascript">
 								setTimeout(
 										function() {
-
-	    }).addTo(map);
-	  //map.setZoom(.8);
-	  // map.setView([400,400]);
-	  /*
-	     var circle = L.circle([-300, 200], {
-	     color: 'red',
-	     fillColor: '#f03',
-	     fillOpacity: 0.5,
-	     radius: 50
-	   }).addTo(map); 
-	  */
-	}, 1500);
-</script>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade w-33" id="special" role="tabpanel" aria-labelledby="profile-tab">
-          <div id="special1"  class="tabcontent">
-            <h3 style="overflow:hidden">Help</h3>
-            <p>under Construction.</p>
-           <jsp:include page="../views/${lang}/HELP/HELP.jspf" />
-          </div>
-        </div>
-        <div class="tab-pane fade w-33" id="special" role="tabpanel" aria-labelledby="profile-tab">
-          <div id="special1"  class="tabcontent">
-            <h3 style="overflow:hidden">Special characters</h3>
-            <p>under Construction.</p>
-           <jsp:include page="../views/${lang}/SC/SC.jspf" />
-          </div>
-        </div>
-        <div class="tab-pane fade" id="AB" role="tabpanel" aria-labelledby="AB-tab">
-          <div id="AB"  class="tabcontent">
-            <h3>Alphabet</h3>
-            <p>Under construction</p>
-             <jsp:include page="../views/${lang}/ABC/ABC.jspf" />
-          </div>
-        </div>
-        <div class="tab-pane fade" id="ADD" role="tabpanel" aria-labelledby="ADD-tab">
-          <div id="ADD1"  class="tabcontent">
-            <h3>Marked Text</h3>
-            <jsp:include page="../views/${lang}/ADD/ADD.jspf" />
-            
-          </div>
-        </div>
-        <div class="tab-pane fade" id="FAQ" role="tabpanel" aria-labelledby="contact-tab">
-          <div id="FAQ1" hidden="hidden" class="tabcontent">
-            <h3>Tips &amp; Links</h3>
-            <p>Under Consruction.</p>
-             <jsp:include page="../views/${lang}/FAQ/FAQ.jspf" />
-          </div>
-        </div>
-      </div>
-    </div>
 											var map = L.map('map', {
 												center : [ 0, 0 ],
 												crs : L.CRS.Simple,
@@ -105,22 +51,12 @@
 												zoom : 2,
 												zoomDelta : 0.25,
 												zoomSnap : 0
-											var map = L.map('map', {
-												center : [ 0, 0 ],
-												crs : L.CRS.Simple,
-												attributionControl : false,
-												zoom : 2,
-												zoomDelta : 0.25,
-												zoomSnap : 0
-
 											});
 											L.tileLayer.iiif("${pageimgsrc}")
 													.addTo(map);
-
 											var polygon = L
 													.polygon(
 															[
-
 																	[
 																			"${ytop}",
 																			"${xleft}" ],
@@ -137,9 +73,7 @@
 																color : 'blue',
 																fillColor : '#f03',
 																fillOpacity : 0.2
-
 															}).addTo(map);
-
 										}, 1500);
 							</script>
 						</div>
