@@ -174,7 +174,7 @@ public class LoginServlet extends HttpServlet {
 
 		if (true) {
 			TikunUser user = new TikunUser(name);
-			request.getSession().setAttribute("name", name);
+			request.getSession().setAttribute("userid", name);
 			request.getSession().setAttribute("user", user);
 			request.getSession().setAttribute("userDB", userValidationService);
 			int b = convert((String) request.getSession().getAttribute("b"));
