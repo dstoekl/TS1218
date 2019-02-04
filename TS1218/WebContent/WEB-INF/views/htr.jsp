@@ -7,7 +7,9 @@
 		window.page_name = 'htr';
 		$("[data-link='htr']").addClass('active');
 	</script>
+
 	  <jsp:include page="../views/${lang}/HTR/htr.jspf" />
+
 	<%@ include file="../common/footer.jspf"%>
 
 

@@ -9,7 +9,7 @@
 		$("[data-link='project']").addClass('active');
 	</script>
 
-	<div class="container scrollable">
+	<div class="container scrollable mt-2">
 		<p>
 			<strong>Tikkoun Sofrim</strong> is a joint French Israeli project
 			aimed to make Medieval Hebrew manuscripts openly and freely available

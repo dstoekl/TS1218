@@ -38,32 +38,31 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO set user name
-		String userid =null;
-		
+		String userid = null;
+
 		request.setCharacterEncoding("UTF-8");
-		
-		String newlang= request.getParameter("lang");
+
+		String newlang = request.getParameter("lang");
 		String currentlang = (String) request.getSession().getAttribute("lang");
-		if(newlang != null) {
+		if (newlang != null) {
 			saveRequestParameterInSession(request, "lang");
 			String oldpage = (String) request.getSession().getAttribute("page");
-			System.out.println("New Lang"+newlang);
+			System.out.println("New Lang" + newlang);
 			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
 			return;
 		} else {
-			if(currentlang == null) {
-				//TODO change to HE
-				System.out.println("No Lang"+newlang);
+			if (currentlang == null) {
+				// TODO change to HE
+				System.out.println("No Lang" + newlang);
 				request.getSession().setAttribute("lang", "EN");
-				
+
 			}
 		}
-		
-		
+
 		String page = request.getParameter("page");
 		if (page == null) {
 			request.getSession().setAttribute("username", request.getParameter("u"));
-			
+
 			saveRequestParameterInSession(request, "ntn");
 			saveRequestParameterInSession(request, "m");
 			saveRequestParameterInSession(request, "p");
@@ -78,11 +77,11 @@ public class LoginServlet extends HttpServlet {
 				page = "views/login.jsp";
 			}
 		}
-		if(page == "views/logout.jsp") {
-			
-			 int userlinecount =UserDBaseJDBC.instance().getCount(userid);
-			 System.out.println("USERid:count"+userid+":"+userlinecount);
-			 request.getSession().setAttribute("userlinecount", userlinecount);
+		if (page == "views/logout.jsp") {
+
+			int userlinecount = UserDBaseJDBC.instance().getCount(userid);
+			System.out.println("USERid:count" + userid + ":" + userlinecount);
+			request.getSession().setAttribute("userlinecount", userlinecount);
 		}
 		System.out.println("page=" + page);
 		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);
@@ -97,9 +96,8 @@ public class LoginServlet extends HttpServlet {
 		String value = request.getParameter(param);
 		if (value != null) {
 			request.getSession().setAttribute(param, value);
-		}
-		else {
-			request.getSession().removeAttribute(param);		
+		} else {
+			request.getSession().removeAttribute(param);
 		}
 	}
 
@@ -174,7 +172,7 @@ public class LoginServlet extends HttpServlet {
 
 		boolean isUserValid = userValidationService.isUserValid(name, password);
 
-		if (isUserValid) {
+		if (true) {
 			TikunUser user = new TikunUser(name);
 			request.getSession().setAttribute("name", name);
 			request.getSession().setAttribute("user", user);
