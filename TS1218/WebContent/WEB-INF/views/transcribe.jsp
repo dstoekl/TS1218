@@ -44,7 +44,6 @@
 							<script type="text/javascript">
 								setTimeout(
 										function() {
-
 											var map = L.map('map', {
 												center : [ 0, 0 ],
 												crs : L.CRS.Simple,
@@ -52,15 +51,12 @@
 												zoom : 2,
 												zoomDelta : 0.25,
 												zoomSnap : 0
-
 											});
 											L.tileLayer.iiif("${pageimgsrc}")
 													.addTo(map);
-
 											var polygon = L
 													.polygon(
 															[
-
 																	[
 																			"${ytop}",
 																			"${xleft}" ],
@@ -77,9 +73,7 @@
 																color : 'blue',
 																fillColor : '#f03',
 																fillOpacity : 0.2
-
 															}).addTo(map);
-
 										}, 1500);
 							</script>
 						</div>
