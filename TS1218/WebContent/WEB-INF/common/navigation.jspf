@@ -23,8 +23,8 @@
 		<div>
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a class="nav-link" data-link="transcribe"
-					href="${pageContext.request.contextPath}/TranscribeServlet">Start
-						correcting!</a></li>
+					href="${pageContext.request.contextPath}/TranscribeServlet"><strong>Start
+						correcting!</strong></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="project"
 					href="${pageContext.request.contextPath}/LoginServlet?page=views/project.jsp">The
 						project</a></li>

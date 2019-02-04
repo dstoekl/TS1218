@@ -4,31 +4,32 @@
 
 <body onload="onloadResize();">
 	<%@include file="../common/navigation.jspf"%>
-	<div
-		class="transcribe-page scrollable mt-2 p-2 row">
-		<div id="info-page" class="container col-sm">
-			<ul class="nav nav-tabs flex-wrap" role="tablist">
-				<li class="nav-item"><a class="nav-link active sfont"
-					id="page-tab" data-toggle="tab" role="tab" href="#page"
-					aria-controls="page" aria-selected="true">Page</a></li>
+	<div class="transcribe-page scrollable mt-2 p-2 row">
+		<div id="info-page" class="container col-sm flex-column d-flex w-25">
+			<div>
+				<ul class="nav nav-tabs flex-wrap" role="tablist">
+					<li class="nav-item"><a class="nav-link active sfont"
+						id="page-tab" data-toggle="tab" role="tab" href="#page"
+						aria-controls="page" aria-selected="true">Page</a></li>
 
-				<li class="nav-item"><a class="nav-link sfont" id="special-tab"
-					data-toggle="tab" role="tab" href="#special"
-					aria-controls="special">Special Characters</a></li>
+					<li class="nav-item"><a class="nav-link sfont"
+						id="special-tab" data-toggle="tab" role="tab" href="#special"
+						aria-controls="special">Special Characters</a></li>
 
-				<li class="nav-item"><a class="nav-link sfont" id="ab-tab"
-					data-toggle="tab" role="tab" href="#ab" aria-controls="ab">אבג</a>
-				</li>
+					<li class="nav-item"><a class="nav-link sfont" id="ab-tab"
+						data-toggle="tab" role="tab" href="#ab" aria-controls="ab">אבג</a>
+					</li>
 
-				<li class="nav-item sfont"><a class="nav-link" id="marked-tab"
-					data-toggle="tab" role="tab" href="#marked" aria-controls="marked">Marked
-						Text</a></li>
+					<li class="nav-item sfont"><a class="nav-link" id="marked-tab"
+						data-toggle="tab" role="tab" href="#marked" aria-controls="marked">Marked
+							Text</a></li>
 
-				<li class="nav-item"><a class="nav-link sfont" id="help-tab"
-					data-toggle="tab" role="tab" href="#help" aria-controls="help">Help</a>
-				</li>
-			</ul>
-			<div class="tab-content" id="myTabContent">
+					<li class="nav-item"><a class="nav-link sfont" id="help-tab"
+						data-toggle="tab" role="tab" href="#help" aria-controls="help">Help</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-content">
 				<div class="tab-pane fade show active" id="page" role="tabpanel"
 					aria-labelledby="page-tab">
 					<div id="imgPage">
@@ -112,8 +113,7 @@
 		</div>
 
 		<!-- Column Two work area -->
-		<div id="transcribe"
-			class="container col w-75">
+		<div id="transcribe" class="container col w-75">
 			<div class="flex-fill d-flex flex-column justify-content-around">
 				<div class="w-100 p-3">
 					<div id="work-page"
