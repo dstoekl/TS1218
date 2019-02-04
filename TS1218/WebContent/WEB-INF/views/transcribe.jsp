@@ -85,18 +85,23 @@ setTimeout(function () {
         </div>
         <div class="tab-pane fade w-33" id="special" role="tabpanel" aria-labelledby="profile-tab">
           <div id="special1"  class="tabcontent">
+            <h3 style="overflow:hidden">Help</h3>
+            <p>under Construction.</p>
+           <jsp:include page="../views/${lang}/HELP/HELP.jspf" />
+          </div>
+        </div>
+        <div class="tab-pane fade w-33" id="special" role="tabpanel" aria-labelledby="profile-tab">
+          <div id="special1"  class="tabcontent">
             <h3 style="overflow:hidden">Special characters</h3>
             <p>under Construction.</p>
-           <jsp:include page="../views/${lang}/ADD/ADD.jspf" />
+           <jsp:include page="../views/${lang}/SC/SC.jspf" />
           </div>
         </div>
         <div class="tab-pane fade" id="AB" role="tabpanel" aria-labelledby="AB-tab">
           <div id="AB"  class="tabcontent">
-            <h3>AB</h3>
+            <h3>Alphabet</h3>
             <p>Under construction</p>
-            <ul>
-              <li>1
-            </ul>
+             <jsp:include page="../views/${lang}/ABC/ABC.jspf" />
           </div>
         </div>
         <div class="tab-pane fade" id="ADD" role="tabpanel" aria-labelledby="ADD-tab">
@@ -110,9 +115,7 @@ setTimeout(function () {
           <div id="FAQ1" hidden="hidden" class="tabcontent">
             <h3>Tips &amp; Links</h3>
             <p>Under Consruction.</p>
-            <ul>
-              <li>1
-            </ul>
+             <jsp:include page="../views/${lang}/FAQ/FAQ.jspf" />
           </div>
         </div>
       </div>
