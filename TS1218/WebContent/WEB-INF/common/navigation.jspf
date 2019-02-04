@@ -42,7 +42,7 @@
 
 		<div>
 			<ul class="nav">
-				<li class="nav-item dropdown"><a
+				<%-- <li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" data-toggle="dropdown"
 					href="${pageContext.request.contextPath}/LoginServlet?lang=EN"
 					role="button" aria-haspopup="false" aria-expanded="false">EN</a>
@@ -51,7 +51,7 @@
 							href="${pageContext.request.contextPath}/LoginServlet?lang=HE">HE</a>
 						<a class="dropdown-item"
 							href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
-					</div></li>
+					</div></li> --%>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/LoginServlet?page=views/logout.jsp">Logout</a>
 				</li>

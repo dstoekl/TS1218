@@ -4,13 +4,27 @@
 
 .scrollable{
 	overflow-y:auto;
-	height:calc(100% - 80px);
+	height:calc(100% - 210px);
 }
 
 .login-page{
-	.register{
-		display:none;
+	&.show-login{
+		.register-form-wrapper{
+				display:none;
+			}
+		}
+		
+
+	&.show-register{
+		.login-form-wrapper{
+			display:none;
+		}
 	}
+	
+	.login-form{
+	
+	background-color:#efefef;
+	}	
 }
 
 

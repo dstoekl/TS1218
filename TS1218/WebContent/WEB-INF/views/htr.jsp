@@ -7,7 +7,7 @@
 		window.page_name = 'htr';
 		$("[data-link='htr']").addClass('active');
 	</script>
-	<div class="container">
+	<div class="container mt-2">
 		<h1>What is HTR?</h1>
 		<div>
 			<p>HTR - (automatic) Handwritten Text Recognition is a
