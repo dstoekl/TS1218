@@ -1,0 +1,14 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+<%
+String bgcolor = "#f5deb3";
+String txtcolor = "#512a0c";
+String frmcolor = "#d3c2a8";
+String ntxtcolor = "black";
+String grdcolor = "#854513,#f5deb3,#854513";
+//String grdcolor = "#f5deb3,#512a0c,#f5deb3";
+String tab1color = "#d3c2a8";
+String tab2color = "#d3b296";
+String tab3color = "#d3b48c";
+String tab4color = "#d3a973";
+String tab5color = "#d39269";
+%>
