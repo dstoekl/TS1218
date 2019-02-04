@@ -5,9 +5,9 @@
 <body onload="onloadResize();">
 	<%@include file="../common/navigation.jspf"%>
 	<div class="transcribe-page scrollable mt-2 p-2 row">
-		<div id="info-page" class="container col-sm flex-column d-flex w-25">
+		<div id="info-page" class="container col-4 flex-column d-flex">
 			<div>
-				<ul class="nav nav-tabs flex-wrap" role="tablist">
+				<ul class="nav nav-tabs flex-nowrap" role="tablist">
 					<li class="nav-item"><a class="nav-link active sfont"
 						id="page-tab" data-toggle="tab" role="tab" href="#page"
 						aria-controls="page" aria-selected="true">Page</a></li>
@@ -113,7 +113,7 @@
 		</div>
 
 		<!-- Column Two work area -->
-		<div id="transcribe" class="container col w-75">
+		<div id="transcribe" class="container col-8">
 			<div class="flex-fill d-flex flex-column justify-content-around">
 				<div class="w-100 p-3">
 					<div id="work-page"
