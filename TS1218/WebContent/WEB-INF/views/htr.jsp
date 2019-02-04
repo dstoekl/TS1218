@@ -4,7 +4,8 @@
 	<%@include file="../common/navigation.jspf"%>
 
 	<script type="text/javascript">
-		document.getElementById("htr").className += " active";
+		window.page_name = 'htr';
+		$("[data-link='htr']").addClass('active');
 	</script>
 	<div class="container">
 		<h1>What is HTR?</h1>
