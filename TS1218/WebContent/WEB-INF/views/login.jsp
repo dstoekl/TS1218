@@ -10,7 +10,7 @@
 				<%@include file="parts/login.jspf"%>
 			</div>
 			<div class="register-form-wrapper">
-				<%@include file="parts/register.jspf"%>\
+				<%@include file="parts/register.jspf"%>
 			</div>
 		
 	</div>

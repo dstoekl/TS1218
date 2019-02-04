@@ -4,9 +4,9 @@
 
 <form autocomplete="on"	action="${pageContext.request.contextPath}/LoginServlet" method="post">
 <p class="change_link">
-		Already registered? <a href="#" onclick="showLoginForm()">Login</a>
+		
 	</p>
-	<h4>Register</h4>
+	<h4>Register</h4> (Already registered? <a href="#" onclick="showLoginForm()">Login</a>)
 	<p style="font-weight: bold; font-size: large; color: red;">${errorMessageRegister}</p>
 	<p>
 		<label for="usernamesignup" class="uname" data-icon="u">Userid:</label>

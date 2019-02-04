@@ -23,8 +23,12 @@
 				type="submit" value="Start correcting" />
 		</div>
 		<p style="font-weight: bold; font-size: large; color: red;">${errorMessageLogin}</p>
+		<div class="d-flex justify-content-between">
 		<div>
-			Not registered yet? <a href="#" onclick="showRegisterForm()">Register</a>
+				Not registered yet? <a href="#" onclick="showRegisterForm()">Register</a>
+			</div>
+			<a href="#" onclick="enterAsGuest()">Enter as guest</a>
+			
 		</div>
 
 	</form>
