@@ -121,7 +121,6 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 		String version = (String) request.getSession().getAttribute("version");
 		if (version == null) {
 			version = "";
-			
 		}
 	//	ManuscriptDescriptor manuscriptDesc =  manuscriptProvider.getManuscriptDescription(task.getmId());
 		ManuscriptPlace place = new ManuscriptPlace(task.getmId().getName(), pageNumber, lineNumber);
@@ -136,7 +135,9 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 		}
 		int status = determineStatus(request);
 		start = (long) request.getSession().getAttribute("starttime");
-		userDB.addTranscription(user.getId(), System.currentTimeMillis(), place, version, automaticTranscription, transcribed, status,start);
+		
+		String ipAddress = getClientIpAddr(request);
+		userDB.addTranscription(user.getId(), System.currentTimeMillis(), place, version, automaticTranscription, transcribed, status,start, ipAddress);
 		System.out.println("!!!!CrowdSourceData: user-"+user.getId()+" status="+status+",page-"+pageNumber+",line-"+lineNumber+",transcribed-"+transcribed
 				+"originalTranscribed:"+ automaticTranscription);
 
@@ -153,7 +154,30 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 		
 	}
 
-
+	/**
+	 * Try to get the actual client (browser) IP address. Taken from: https://stackoverflow.com/a/15323776
+	 * @param request
+	 * @return
+	 */
+	private String getClientIpAddr(HttpServletRequest request) {
+		String ip = request.getHeader("X-Forwarded-For");
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("HTTP_CLIENT_IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
+		return ip;
+	}
 	private int determineStatus(HttpServletRequest request) {
 		//TODO
 		int retVal = 0;

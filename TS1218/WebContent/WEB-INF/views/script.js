@@ -14,6 +14,13 @@ function makeActive() {
 	}
 }
 
+// guest login
+function enterAsGuest() {
+	$('#username').val('guest');
+	$('#password').val('');
+	$('#loginButton').click();
+}
+
 // When the user clicks on <div>, open the popup
 function myPopup() {
 	var popup = document.getElementById("myPopup");
