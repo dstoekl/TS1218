@@ -1,24 +1,18 @@
 <div class="special_chars info_content">
 	<div class="header">
-		<div class="title">Special characters</div>
+		<div class="title">סימנים מיוחדים</div>
 	</div>
 	<div class="content">
 		<div class="line_fillers">
-			<div class="title">Line fillers</div>
+			<div class="title">שומר שורה</div>
 			<div class="content">
-				<p>In order to maintain a homogeneous text layout, medieval
-					scribes frequently used “line fillers”, special characters added at
-					the ends of lines in cases where the text did not reach the end of
-					line naturally. Another way was filling the remaining space with
-					the first letters of the word of the next line. The scribe of the
-					Geneva manuscript usually fills the end of lines with one or two
-					diagonal strokes.</p>
+				<p>כדי לשמור על גוף טקסט אחיד ואסתטי, נהגו סופרי ימי הביניים להוסיף סימנים שונים בסופי השורות במקרים בהם הטקסט לא הגיע עד סוף השורה. אחרים נהגו לרשום את האותיות הראשונות של המילה ואז להעתיקה בשלמותה בתחילת השורה הבאה. שיטה נוספת היא כתיבת אות אחרונה רחבה במיוחד, עד סוף השורה 
+סופר כתב יד ז'נבה ממלא בדרך כלל את סופי השורות בקו אלכסוני, או בשני קווים אלכסוניים.
+</p>
 				<img
 					src="/TS1218/images/special_characters/a_special_characters_linefillers.png">
 				<p>
-					<strong>In order to insert these characters at the end of
-						a line, press the leftmost button at the buttons line under the
-						text and select the / symbol or //</strong>
+					<strong>כדי לסמן תוים אלה בסוף שורת הטקסט, לחצו על הכפתור השמאלי ביותר בשורת הכפתורים מתחת לשורת הטקסט, ובחרו בסימן  / או //</strong>
 				</p>
 
 
