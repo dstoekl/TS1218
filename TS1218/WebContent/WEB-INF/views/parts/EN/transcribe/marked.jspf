@@ -23,17 +23,16 @@
 						couple of other deletion types in the manuscript:</p>
 
 					<ul>
-						<li><img class="tslogos" src="/TS1218/images/logos/LOGO_PSL.png"
-			alt="PSL" title=PSL> the line above indicates the deletion of ואת בניו
+						<li><img src="/TS1218/images/ex_deletion_small.jpg"> the line above indicates the deletion of ואת בניו
 							(erroneously written twice).</li>
-						<li>- the word בתורה has been struck through.</li>
-						<li>- a combination of both methods mentioned above.</li>
+						<li><img src="/TS1218/images/ex_struck_through_small.jpg"> the word בתורה has been struck through.</li>
+						<li><img src="/TS1218/images/ex_combination_stuck_deletion_small.jpg"> a combination of both methods mentioned above.</li>
 					</ul>
 					<p>In order to signal that a word or letter in the manuscript
 						has been deleted, mark the text using the mouse and then press on
-						the “deleted” button under the text box. Alternatively, press the
+						the “deleted” button (<img src="/TS1218/images/ex_deleted_btn_small.jpg">) under the text box. Alternatively, press the
 						delete button and then type the deleted text between parentheses.
-						For example: (אותי ) Is marked as deleted</p>
+						For example: <img src="/TS1218/images/ex_marked_as_deleted_small.jpg"> (אותי ) Is marked as deleted</p>
 				</div>
 			</div>
 
@@ -45,21 +44,23 @@
 			</div>
 			<div class="additions">
 				<div class="title">Additions</div>
-				<div class="content">Additions can be either interlinear
+				<div class="content">
+				<p>
+				Additions can be either interlinear
 					(above or below the line) or marginal (in the margins). Additions
 					of the first scribe - to add a word or letter missed during copying
 					Additions by others - to add a word accidentally omitted by the
 					first scribe or to correct the text according to a different
 					version. The scribe of ms Geneva usually inserts additions above
 					the line if they are short, while longer passages are added in the
-					margins. Here, the scribe has inserted the word בן : In order to
+					margins.</p><p>Here, the scribe has inserted the word בן : <img src="/TS1218/images/ex_addition_small.jpg"> In order to
 					signal an addition, press the [Addition] button below the text line
 					and then write the added word between the brackets. If you want to
 					signal that a transcribed word or letter should rather be handled
 					as addition, please mark that word or letter with your mouse and
 					then click on the [Addition] button. For example, the addition of
 					the letter ה in the שקדים has to appear in the end as על ש[ה]קדים
-					שמו:</div>
+					שמו:</p></div>
 			</div>
 			<div class="combination">
 				<div class="title">Combination of a deletion and an addition</div>
