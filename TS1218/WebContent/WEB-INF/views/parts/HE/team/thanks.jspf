@@ -1,18 +1,17 @@
 <div class="thanks">
 	<div class="header">
-		<strong>Special Thanks</strong>
+		<strong>Sתודות</strong>
 	</div>
 	<div>
-		<p>We would like to thank Robin Tissot, Prof. Marc Bui, Dr. Shimon
-			Fogel, Einat Tamir, Pawel Jablonski and Anna Scius-Bertrand for their
-			contributions.</p>
-		<p>Special thanks to the scholars who donated Manuscript
-			transcriptions used for the initial training of Kraken: Prof. Hananel
-			Mack, Dr. Tamar Kadari, Prof. Rivka Ulmer.</p>
-		<p>Additionally, thank you to the following institutions for
-			providing images for this project: Biblioth�que de Gen�ve, Biblioteca
-			Apostolica Vaticana, Biblioteca Palatina in Parma. All rights of the
-			manuscript images reserved to these institutions.</p>
+		<p>תודתנו שלוחה לרובין טיסו, פרופ' מארק בואי, ד"ר שמעון פוגל, 
+		עינת טמיר, פאבל יבלונסקי ואנה סיו-ברטרן על תרומתם לפרויקט.</p>
+		</div>
+		<p>תודה מיוחדת לחוקרים הבאים שתרמו העתקות כתבי יד לשם האימון הראשוני 
+		של קראקן: פרופ' חננאל מאק, דר' תמר קדרי, פרופ' רבקה אולמר.</p>
+		</div>
+		<p>תודה גם למוסדות ולספריות שאיפשרו לנו גישה לסריקות כתבי היד:
+		ספריית אוניברסיטת ז'נבה, ספריית הוטיקן, ספרית הפלטינה, פארמה.
+		כל הזכויות על סריקות כתבי היד שמורות למוסדות אלו.</p>
 
 	</div>
 </div>
