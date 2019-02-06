@@ -12,6 +12,9 @@ import il.haifa.ac.dh.tikkounsofrim.model.ManuscriptPlace;
 import il.haifa.ac.dh.tikkounsofrim.model.UserDBase;
 import il.haifa.ac.dh.tikkounsofrim.model.UserInfo;
 public class UserDBaseJDBC implements UserDBase {
+	//private static final String DB_SERVER = "tikkoun-sofrim.haifa.ac.il";
+	private static final String DB_SERVER = "localhost";
+	
 	private Connection connect = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
@@ -83,7 +86,9 @@ public class UserDBaseJDBC implements UserDBase {
 	if (connect == null || connect.isClosed()) {
 		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 		connect = DriverManager
-		        .getConnection("jdbc:mysql://localhost/tikkoun?"
+		        .getConnection("jdbc:mysql://"
+		        		+ DB_SERVER
+		        		+ "/tikkoun?"
 		                + "user=tikun&password=Paris2019!&serverTimezone=UTC&characterEncoding=utf-8&useUnicode=true");
 	}
 	
@@ -238,13 +243,16 @@ public class UserDBaseJDBC implements UserDBase {
 
 	@Override
 	public int addTranscription(String user, long endtime, ManuscriptPlace place, String version,
-			String automaticTranscription, String userTranscription, int status, long start) {
+			String automaticTranscription, String userTranscription, int status, long start, String ipAddress) {
 		
 		
 		try {
 			connect();  
 			preparedStatement = connect
-			          .prepareStatement("insert into  tikkoun.transcriptions values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+			          .prepareStatement("insert into tikkoun.transcriptions "
+			          		+ "(date, userid, manuscript, page, line, transcriptionversion, "
+			          		+ "automatictranscription, usertranscription, status, start, host) "
+			          		+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			preparedStatement.setTimestamp(1,new Timestamp(endtime));
 			preparedStatement.setString(2, user);
 		      preparedStatement.setString(3, place.manuscriptId.getName());
@@ -255,6 +263,7 @@ public class UserDBaseJDBC implements UserDBase {
 		      preparedStatement.setString(8, userTranscription);
 		      preparedStatement.setInt(9, status);
 		      preparedStatement.setTimestamp(10, new Timestamp(start));
+		      preparedStatement.setString(11, ipAddress);
 		      preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -12,14 +12,14 @@
 	</p>
 </div>
 <div class="mt-5">
-	<form autocomplete="on"
+	<form autocomplete="on" id="loginForm"
 		action="${pageContext.request.contextPath}/LoginServlet" method="post">
 
 		<div class="login-form w-100 d-flex justify-content-between p-2 mb-2">
 			<input id="username" name="username" required="required" type="text"
 				placeholder="myusername or mymail@mail.com" value="${username}" />
-			<input id="password" name="password" required="required"
-				type="password" placeholder="eg. X8df!90EO" /> <input name="login"
+			<input id="password" name="password"
+				type="password" placeholder="eg. X8df!90EO" /> <input id="loginButton" name="login"
 				type="submit" value="Start correcting" />
 		</div>
 		<p style="font-weight: bold; font-size: large; color: red;">${errorMessageLogin}</p>

@@ -9,7 +9,7 @@ public interface UserDBase {
 	 
 	 public int getCount(String user);
 	 public int addTranscription(String user, long l, ManuscriptPlace place, String version,
-			String automaticTranscription, String userTranscription, int status, long start);
+			String automaticTranscription, String userTranscription, int status, long start, String ipAddress);
 	 public int getTotalTimesLineSeen(ManuscriptPlace place);
 	 public int getTotalTimesLineCorrected(ManuscriptPlace place);
 	 
