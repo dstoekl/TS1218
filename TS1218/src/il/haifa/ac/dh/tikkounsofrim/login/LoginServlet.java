@@ -45,7 +45,12 @@ public class LoginServlet extends HttpServlet {
 		String newlang = request.getParameter("lang");
 		String currentlang = (String) request.getSession().getAttribute("lang");
 		if (newlang != null) {
+			String dir = "LTR";
 			saveRequestParameterInSession(request, "lang");
+			if(newlang == "HE") {
+				dir = "RTL";
+			}
+			request.getSession().setAttribute("dir",dir);
 			String oldpage = (String) request.getSession().getAttribute("page");
 			System.out.println("New Lang" + newlang);
 			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
