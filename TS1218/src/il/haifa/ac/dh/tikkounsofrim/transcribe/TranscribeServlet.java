@@ -51,14 +51,25 @@ public class TranscribeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		Task task =  (Task) request.getSession().getAttribute("task");
 		if(task==null) {
-			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(
-					request, response);
+			redirectToLoginPage(request, response);
 			return;
 		}
 		setupTranscription(request, task);
 		start = System.currentTimeMillis();
 		request.getSession().setAttribute("starttime",start);
 		request.getRequestDispatcher("/WEB-INF/views/transcribe.jsp").forward(
+				request, response);
+	}
+
+	/**
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	private void redirectToLoginPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(
 				request, response);
 	}
 
@@ -111,13 +122,18 @@ private void setupTranscription(HttpServletRequest request, Task task) {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		Task task = (Task) request.getSession().getAttribute("task");
+		if (task == null) {
+			redirectToLoginPage(request, response);
+			return;
+		}
+
 		String transcribed = request.getParameter("transcribed");
 		
 		int pageNumber= (int) request.getSession().getAttribute("manuscriptPage");
 		int lineNumber= (int) request.getSession().getAttribute("manuscriptLine");
 		TikunUser user= (TikunUser) request.getSession().getAttribute("user");
 		UserDBase userDB = (UserDBase) request.getSession().getAttribute("userDB");
-		Task task = (Task) request.getSession().getAttribute("task");
 		String version = (String) request.getSession().getAttribute("version");
 		if (version == null) {
 			version = "";
