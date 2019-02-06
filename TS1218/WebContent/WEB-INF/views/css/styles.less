@@ -7,6 +7,42 @@
 	height:calc(100% - 210px);
 }
 
+.marked-text{
+	.deletions_and_additions{
+		&>.header{
+		.title{
+		font-size:1.2rem;
+		}
+			font-weight:bold;
+		}
+		&>.content{
+			&>div{
+				margin-top:5px;
+				.title{
+					font-weight:bold;
+				}
+				ul{
+				list-style:none;
+				}
+			}
+		
+		}
+	
+	}
+
+}
+
+.team-page{
+&>div{
+margin-bottom:5px;
+}
+.team{
+.member{
+margin-bottom:5px;
+}
+}
+}
+
 .login-page{
 	&.show-login{
 		.register-form-wrapper{
@@ -59,7 +95,6 @@ body {
     top: 0;
     position: absolute;
     overflow: hidden;
-    font-size: 1.2rem;
     
     .top-banner {
         height: 60px;

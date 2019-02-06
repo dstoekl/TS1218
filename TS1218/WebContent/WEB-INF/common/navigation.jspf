@@ -24,10 +24,10 @@
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a class="nav-link" data-link="transcribe"
 					href="${pageContext.request.contextPath}/TranscribeServlet"><strong>Start
-						correcting!</strong></a></li>
+							correcting!</strong></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="project"
 					href="${pageContext.request.contextPath}/LoginServlet?page=views/project.jsp">The
-						project</a></li>
+						Project</a></li>
 				<li class="nav-item"><a class="nav-link" data-link="htr"
 					href="${pageContext.request.contextPath}/LoginServlet?page=views/htr.jsp">What
 						is HTR</a></li>

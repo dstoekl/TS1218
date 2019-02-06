@@ -3,5 +3,6 @@ encoding//WebContent/WEB-INF/common/navigation.jspf=UTF-8
 encoding//WebContent/WEB-INF/data/Geneva_146_all_data_for_Alan.txt=UTF-8
 encoding//WebContent/WEB-INF/views/parts/EN/transcribe/abc.jspf=UTF-8
 encoding//WebContent/WEB-INF/views/parts/EN/transcribe/help.jspf=UTF-8
+encoding//WebContent/WEB-INF/views/parts/EN/transcribe/marked.jspf=UTF-8
 encoding//WebContent/WEB-INF/views/parts/EN/transcribe/special.jspf=UTF-8
 encoding//WebContent/WEB-INF/views/parts/HE/transcribe/special.jspf=UTF-8
