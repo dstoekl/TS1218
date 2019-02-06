@@ -46,22 +46,17 @@ public class LoginServlet extends HttpServlet {
 		String currentlang = (String) request.getSession().getAttribute("lang");
 		if (newlang != null) {
 			String dir = "LTR";
-			saveRequestParameterInSession(request, "lang");
-			if(newlang == "HE") {
+			request.getSession().setAttribute("dir", newlang);
+			if("HE".equalsIgnoreCase(newlang)) {
 				dir = "RTL";
 			}
-			request.getSession().setAttribute("dir",dir);
+			request.getSession().setAttribute("dir", dir);
 			String oldpage = (String) request.getSession().getAttribute("page");
 			System.out.println("New Lang" + newlang);
 			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
 			return;
 		} else {
-			if (currentlang == null) {
-				// TODO change to HE
-				System.out.println("No Lang" + newlang);
-				request.getSession().setAttribute("lang", "EN");
-
-			}
+			setDefaultLanguage(request);
 		}
 
 		String page = request.getParameter("page");
@@ -95,6 +90,16 @@ public class LoginServlet extends HttpServlet {
 
 	/**
 	 * @param request
+	 */
+	private void setDefaultLanguage(HttpServletRequest request) {
+		if (request.getSession().getAttribute("lang") == null) {
+			// TODO change to HE
+			request.getSession().setAttribute("lang", "EN");
+		}
+	}
+
+	/**
+	 * @param request
 	 * @param param
 	 */
 	private void saveRequestParameterInSession(HttpServletRequest request, String param) {
@@ -109,6 +114,9 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
+		setDefaultLanguage(request);
+		
 		String login = request.getParameter("login");
 		System.out.println("login exists " + login);
 		if (login != null) {
