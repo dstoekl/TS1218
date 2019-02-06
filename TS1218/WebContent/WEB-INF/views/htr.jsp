@@ -9,11 +9,6 @@
 	</script>
 
 	  <jsp:include page="../views/${lang}/HTR/htr.jspf" />
-
-	<%@ include file="../common/footer.jspf"%>
-
-
-
 </body>
 
-</html>
+<%@ include file="../common/footer.jspf"%>
