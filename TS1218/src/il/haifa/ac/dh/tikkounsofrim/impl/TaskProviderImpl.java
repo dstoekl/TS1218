@@ -29,8 +29,8 @@ public class TaskProviderImpl implements TaskProvider {
 		// TODO Auto-generated method stub
 		boolean free = checkIfFree(seed);
 		while (!free) {
-			seed = seed.getNext(mprov.getManuscriptDescription(seed.manuscriptId).getTotalPageNumber(),
-					mprov.getManuscriptDescription(seed.manuscriptId).getTotalLineNumbers(seed.page));
+			seed = seed.getNext(mprov.getManuscriptDescription(seed.manuscriptId).getTotalLineNumbers(seed.page),
+					mprov.getManuscriptDescription(seed.manuscriptId).getTotalPageNumber());
 			free = checkIfFree(seed);
 		}
 		return seed;

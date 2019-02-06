@@ -22,7 +22,7 @@ public class ManuscriptPlace {
 					
 		} else 	if(currentPage < totalPages) { //getManuscriptDescription(task.getmId()).getTotalPageNumber()) {
 				currentPage++;
-			    currentLineNumber=1;
+			    this.line = 1;
 			    this.page = currentPage;
 				return this;
 		}
