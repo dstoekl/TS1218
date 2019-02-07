@@ -41,6 +41,10 @@
 			and Research, the French Ministry of Foreign Affairs and the Israeli
 			Ministry of Science. eLijah-lab is supported by Hekhal Eliyahu NGO.</p>
 	</div>
+	<div>
+		For questions, suggestions or any other remark, feel free to <a
+			href="mailto:tikkoun.sofrim@gmail.com">contact us</a>
+	</div>
 
 	<!-- img src='<c:url value="/images/elijah.png" ></c:url>' /-->
 	<%@ include file="../common/footer.jspf"%>
