@@ -37,8 +37,8 @@
 					deleted, mark the text using the mouse and then press on the
 					“deletion” button (<img
 						src="/TS1218/images/ex_deleted_btn_small.jpg">) under the
-					text box. Alternatively, press the 'deletion' button and then type the
-					deleted text between parentheses. For example: <img
+					text box. Alternatively, press the 'deletion' button and then type
+					the deleted text between parentheses. For example: <img
 						src="/TS1218/images/ex_marked_as_deleted_small.jpg"> (אותי )
 					Is marked as deleted
 				</p>
@@ -68,26 +68,43 @@
 					and then write the added word between the brackets. If you want to
 					signal that a transcribed word or letter should rather be handled
 					as addition, please mark that word or letter with your mouse and
-					then click on the [Addition] button. For example, the addition of
-					the letter ה in the שקדים has to appear in the end as על ש[ה]קדים
-					שמו:
+					then click on the [Addition] button (<img
+						src="/TS1218/images/ex_inserted_btn.png">). For example, the
+					addition of the letter ה in the שקדים has to appear in the end as
+					על ש[ה]קדים שמו:
 				</p>
+				<div class="images">
+					<img src="/TS1218/images/al_shkedim_small.jpg">
+				</div>
 			</div>
 		</div>
 		<div class="combination">
 			<div class="title">Combination of a deletion and an addition</div>
-			<div class="content">Additions can If a word added between the
-				lines corrects a word in the line, both have to be marked. In the
-				following example, the scribe first wrote מתחילין and then deleted
-				it and added מיתישבים above the line. This has to be marked
-				as:התחילו (מתחילין) [מתישבים] ב</div>
+			<div class="content">
+				<p>Additions can If a word added between the lines corrects a
+					word in the line, both have to be marked. In the following example,
+					the scribe first wrote מתחילין and then deleted it and added
+					מיתישבים above the line. This has to be marked as:התחילו (מתחילין)
+					[מתישבים] ב</p>
+				<div class="images">
+					<img src="/TS1218/images/hatchilu_small.jpg">
+				</div>
+			</div>
 		</div>
 		<div class="diagonal_words_at_the_end_of_lines">
 			<div class="title">Diagonal words at the end of lines</div>
-			<div class="content">In order to align end of lines, the author
-				sometimes wrote the last word diagonally. Often the transcription
-				software has problems with such words. These words should be written
-				as regular words without any special mark. See examples below</div>
+			<div class="content">
+				<p>In order to align end of lines, the author sometimes wrote
+					the last word diagonally. Often the transcription software has
+					problems with such words. These words should be written as regular
+					words without any special mark. See examples below</p>
+				<div class="images">
+					<img
+						src="/TS1218/images/marked_text/h_marked_text_diagonal_end_line1.png">
+					<img
+						src="/TS1218/images/marked_text/i_marked_text_diagonal_end_line2.png">
+				</div>
+			</div>
 		</div>
 		<div class="damaged_or_unreadable_text">
 			<div class="title">Damaged or unreadable text</div>
@@ -96,11 +113,17 @@
 					torn and sometimes the ink was erased/blurred.</p>
 				<p>
 					<strong> In order to mark unidentified letters
-						(torn/blurred) press on the “damaged” button and mark spaces
+						(torn/blurred) press on the “damaged” button (<img
+						src="/TS1218/images/damaged button.PNG">) and mark spaces
 						between square brackets according to the estimated missing/unclear
-						part.</strong>
+						part.
+					</strong>
 				</p>
-				<p>needs to be written as follows: קול שילך אצל < ></p>
+				<p>
+					needs to be written as follows: <img
+						src="/TS1218/images/marked_text/j_marked_text_damage_unreadable_text.png">
+					קול שילך אצל < >
+				</p>
 			</div>
 		</div>
 		<div class="uncertainty_in_transcription">
@@ -118,12 +141,18 @@
 					כחן</p>
 				<p>
 					<strong>In order to mark the uncertainty, use the mouse to
-						mark the uncertain letter and then press the “doubtful” button .
-						Alternatively, you can press the button and type the most probable
-						option between curly brackets.</strong>
+						mark the uncertain letter and then press the “doubtful” button (<img
+						src="/TS1218/images/uncertain_button.PNG">). Alternatively,
+						you can press the button and type the most probable option between
+						curly brackets.
+					</strong>
 				</p>
-				<p>In the example there is a need to write the doubtful letter
-					as follows: {אלא לפי כח{ו</p>
+				<p>
+					In the example there is a need to write the doubtful letter as
+					follows: <img
+						src="/TS1218/images/marked_text/k_marked_text_uncertainty1.png">
+					{אלא לפי כח{ו
+				</p>
 			</div>
 		</div>
 	</div>
