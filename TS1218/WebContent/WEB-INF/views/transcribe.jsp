@@ -1,12 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+'<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
 <%@include file="../common/header.jspf"%>
 
-<body onload="onloadResize();">
+<body onload="onloadResize();" dir="${dir}">
 	<%@include file="../common/navigation.jspf"%>
-	<div class="transcribe-page scrollable mt-2 p-2 row">
+	<div dir="ltr"     class="transcribe-page scrollable mt-2 p-2 row">
 		<div id="info-page" class="container col-4 flex-column d-flex">
-			<div>
+			<div dir="${dir}">
 				<ul class="nav nav-tabs flex-nowrap" role="tablist">
 					<li class="nav-item"><a class="nav-link active sfont"
 						id="page-tab" data-toggle="tab" role="tab" href="#page"
@@ -29,7 +29,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="tab-content">
+			<div dir="${dir}" class="tab-content">
 				<div class="tab-pane fade show active" id="page" role="tabpanel"
 					aria-labelledby="page-tab">
 					<div id="imgPage">
@@ -107,12 +107,12 @@
 		</div>
 
 		<!-- Column Two work area -->
-		<div id="transcribe" class="container col-8">
+		<div  dir="rtl" id="transcribe" class="container col-8">
 			<div class="flex-fill d-flex flex-column justify-content-around">
 				<div class="w-100 p-3">
 					<div id="work-page"
 						class="d-flex flex-column justify-content-between">
-						<div class="header mb-4">
+						<div dir="${dir}"  class="header mb-4">
 							<div>This is an automatic transcription. Please correct all
 								errors</div>
 
@@ -145,7 +145,7 @@
 									type="hidden" id="trwOrig" value="${transcribedline}" />
 							</div>
 							<!-- Transcribe toolbar -->
-							<div class="btn-toolbar justify-content-between d-flex mt-3 p-10"
+							<div  class="btn-toolbar justify-content-between d-flex mt-3 p-10"
 								role="toolbar">
 								<div class="mr-2" role="group">
 									<select id="filler" class="custom-select"
@@ -204,7 +204,7 @@
 								</div>
 							</div>
 
-							<div id="activity" class="mt-2 align-self-center w-60">
+							<div dir="${dir}" id="activity" class="mt-2 align-self-center w-60">
 
 								<label>Having corrected all errors, or if no errors
 									found, press ‘Done’. </label> <label>If you wish to skip this
