@@ -113,11 +113,9 @@
 					<div id="work-page"
 						class="d-flex flex-column justify-content-between">
 						<div dir="${dir}"  class="header mb-4">
-							<div>This is an automatic transcription. Please correct all
-								errors</div>
+							<div><fmt:message key="main.work_area.intro_line_1"/></div>
 
-							<div>including misread letters, missing letters,
-								unnecessary or missing spaces or misread signs</div>
+							<div><fmt:message key="main.work_area.intro_line_2"/></div>
 						</div>
 						<!--             <div id="img-line" style="background-image:url('http://tikkoun-sofrim.haifa.ac.il/cantaloupe/iiif/2/bge-cl0146_007.jpg/511,4684,4155,449/full/0/default.jpg');"> -->
 						<img id="imgline"
@@ -171,19 +169,19 @@
 
 									<button class="btn btn-secondary" type="button"
 										onclick="myMark('}','{')" title="Mark Damaged">
-										{<span style="font-size: smaller;">Uncertain</span>}
+										<span style="font-size: smaller;"><fmt:message key="main.work_area.button_4"/></span>
 									</button>
 									<button class="btn btn-secondary" type="button"
 										onclick="myMark('>','<')" title="Mark Uncertain">
-										&lt;<span style="font-size: smaller;">Damaged</span>&gt;
+										<span style="font-size: smaller;"><fmt:message key="main.work_area.button_3"/></span>
 									</button>
 									<button class="btn btn-secondary" type="button"
 										onclick="myMark(')','(')" title="Mark Deleted">
-										(<span style="font-size: smaller;">Deleted</span>)
+										<span style="font-size: smaller;"><fmt:message key="main.work_area.button_1"/></span>
 									</button>
 									<button class="btn btn-secondary" type="button"
 										onclick="myMark(']','[')" title="Mark Addition">
-										[<span style="font-size: smaller;">Addition</span>]
+										<span style="font-size: smaller;"><fmt:message key="main.work_area.button_2"/></span>
 									</button>
 								</div>
 
@@ -191,7 +189,7 @@
 								<div class="btn-group mr-2" role="group"
 									aria-label="Second group">
 									<button class="btn btn-secondary" type="button"
-										onclick="myReset()" title="Reset to original transcribedline">Reset</button>
+										onclick="myReset()" title="Reset to original transcribedline"><fmt:message key="main.work_area.button_5"/></button>
 									<button class="btn btn-secondary" type="button"
 										onclick="myResize(1)" title="Increase size of text">
 										<span style="font-size: larger;"><b>א+</b></span>
@@ -206,16 +204,15 @@
 
 							<div dir="${dir}" id="activity" class="mt-2 align-self-center w-60">
 
-								<label>Having corrected all errors, or if no errors
-									found, press ‘Done’. </label> <label>If you wish to skip this
-									line without correcting, press ‘Skip’.</label>
+								<div><fmt:message key="main.work_area.finish_line_1"/></div>
+								<div><fmt:message key="main.work_area.finish_line_2"/></div>
 
 								<div id="activity-buttons"
 									class="mt-2 d-flex justify-content-between">
 									<button type="submit" class="btn btn-primary" name="status"
-										value="Done">Done</button>
+										value="Done"><fmt:message key="main.work_area.finish_button_1"/></button>
 									<button type="submit" class="btn btn-primary" name="status"
-										value="Skip">Skip</button>
+										value="Skip"><fmt:message key="main.work_area.finish_button_2"/></button>
 								</div>
 							</div>
 						</form>

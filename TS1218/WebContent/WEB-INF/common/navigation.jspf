@@ -23,20 +23,20 @@
 		<div>
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a class="nav-link" data-link="transcribe"
-					href="${pageContext.request.contextPath}/TranscribeServlet"><strong>Start
-							correcting!</strong></a></li>
+					href="${pageContext.request.contextPath}/TranscribeServlet"><strong>
+							<fmt:message key="toolbar.right.start"/></strong></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="project"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/project.jsp">The
-						Project</a></li>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/project.jsp">
+						<fmt:message key="Toolbar.left.Project"/></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="htr"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/htr.jsp">What
-						is HTR</a></li>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/htr.jsp">
+						<fmt:message key="Toolbar.left.HTR"/></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="tanhuma"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/tanhuma.jsp">The
-						Midrash</a></li>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/tanhuma.jsp">
+						<fmt:message key="toolbar.left.Midrash"/></a></li>
 				<li class="nav-item"><a class="nav-link" data-link="team"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/team.jsp">The
-						Team</a></li>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/team.jsp">
+						<fmt:message key="toolbar.left.Team"/></a></li>
 			</ul>
 		</div>
 
@@ -53,16 +53,16 @@
 							href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
 					</div></li>  --%>
 				<li class="nav-item"><a class="nav-link" data-link="ENG"
-					href="${pageContext.request.contextPath}/LoginServlet?lang=EN">ENG</a>
+					href="${pageContext.request.contextPath}/LoginServlet?lang=EN">EN</a>
 				</li>	
 				<li class="nav-item"><a class="nav-link" data-link="HEB"
-					href="${pageContext.request.contextPath}/LoginServlet?lang=HE">HEB</a>
+					href="${pageContext.request.contextPath}/LoginServlet?lang=HE">עב</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" data-link="FRN"
-					href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FRN</a>
+					href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp">Logout</a>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp"><fmt:message key="toolbar.right.logout"/></a>
 				</li>
 			</ul>
 		</div>
