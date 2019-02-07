@@ -192,7 +192,7 @@ public class LoginServlet extends HttpServlet {
 
 		boolean isUserValid = userValidationService.isUserValid(name, password);
 
-		if (true) {
+		if (isUserValid) {
 			TikunUser user = new TikunUser(name);
 			request.getSession().setAttribute("userid", name);
 			request.getSession().setAttribute("user", user);
