@@ -50,8 +50,12 @@ public class LoginServlet extends HttpServlet {
 			if("HE".equalsIgnoreCase(newlang)) {
 				dir = "RTL";
 			}
+			request.getSession().setAttribute("lang", newlang);
 			request.getSession().setAttribute("dir", dir);
 			String oldpage = (String) request.getSession().getAttribute("page");
+			if (oldpage==null) {
+				oldpage= "views/login.jsp";
+			}
 			System.out.println("New Lang" + newlang);
 			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
 			return;
@@ -84,6 +88,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("userlinecount", userlinecount);
 		}
 		System.out.println("page=" + page);
+		request.getSession().setAttribute("page", page);
 		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);
 
 	}
@@ -95,6 +100,7 @@ public class LoginServlet extends HttpServlet {
 		if (request.getSession().getAttribute("lang") == null) {
 			// TODO change to HE
 			request.getSession().setAttribute("lang", "EN");
+			request.getSession().setAttribute("dir", "LTR");
 		}
 	}
 
@@ -134,6 +140,7 @@ public class LoginServlet extends HttpServlet {
 			page = "views/login.jsp";
 		}
 		System.out.println("page2=" + page);
+		request.getSession().setAttribute("page", page);
 		request.getRequestDispatcher("/WEB-INF/" + page).forward(request, response);
 	}
 

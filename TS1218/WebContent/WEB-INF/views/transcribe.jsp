@@ -1,8 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+'<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
 <%@include file="../common/header.jspf"%>
 
-<body onload="onloadResize();">
+<body onload="onloadResize();" dir="${dir}">
 	<%@include file="../common/navigation.jspf"%>
 	<div class="transcribe-page scrollable mt-2 p-2 row">
 		<div id="info-page" class="container col-4 flex-column d-flex">
