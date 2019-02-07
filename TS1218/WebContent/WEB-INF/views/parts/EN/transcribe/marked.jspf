@@ -81,7 +81,7 @@
 		<div class="combination">
 			<div class="title">Combination of a deletion and an addition</div>
 			<div class="content">
-				<p>Additions can If a word added between the lines corrects a
+				<p>If a word added between the lines corrects a
 					word in the line, both have to be marked. In the following example,
 					the scribe first wrote מתחילין and then deleted it and added
 					מיתישבים above the line. This has to be marked as:התחילו (מתחילין)
@@ -132,7 +132,7 @@
 				<p>
 					<strong>‘doubtful’</strong>
 				</p>
-				<p>The doubtful button is intended for cases where you are not
+				<p>The "doubtful" button is intended for cases where you are not
 					sure if the automatic transcription correctly identified the letter
 					in the manuscript. Please try to minimize the use of this button
 					and use it only in extreme cases.</p>
