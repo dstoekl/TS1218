@@ -1,3 +1,4 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
 <div class="marked_text info_content">
 
 
@@ -24,10 +25,10 @@
 
 				<ul>
 					<li><img src="/TS1218/images/ex_deletion_small.jpg"> the
-						line above indicates the deletion of ואת בניו (erroneously written
+						line above indicates the deletion of ×××ª ×× ×× (erroneously written
 						twice).</li>
 					<li><img src="/TS1218/images/ex_struck_through_small.jpg">
-						the word בתורה has been struck through.</li>
+						the word ××ª××¨× has been struck through.</li>
 					<li><img
 						src="/TS1218/images/ex_combination_stuck_deletion_small.jpg">
 						a combination of both methods mentioned above.</li>
@@ -35,11 +36,11 @@
 				<p>
 					In order to signal that a word or letter in the manuscript has been
 					deleted, mark the text using the mouse and then press on the
-					“deleted” button (<img
+					âdeletedâ button (<img
 						src="/TS1218/images/ex_deleted_btn_small.jpg">) under the
 					text box. Alternatively, press the delete button and then type the
 					deleted text between parentheses. For example: <img
-						src="/TS1218/images/ex_marked_as_deleted_small.jpg"> (אותי )
+						src="/TS1218/images/ex_marked_as_deleted_small.jpg"> (×××ª× )
 					Is marked as deleted
 				</p>
 			</div>
@@ -62,15 +63,15 @@
 					usually inserts additions above the line if they are short, while
 					longer passages are added in the margins.</p>
 				<p>
-					Here, the scribe has inserted the word בן : <img
+					Here, the scribe has inserted the word ×× : <img
 						src="/TS1218/images/ex_addition_small.jpg"> In order to
 					signal an addition, press the [Addition] button below the text line
 					and then write the added word between the brackets. If you want to
 					signal that a transcribed word or letter should rather be handled
 					as addition, please mark that word or letter with your mouse and
 					then click on the [Addition] button. For example, the addition of
-					the letter ה in the שקדים has to appear in the end as על ש[ה]קדים
-					שמו:
+					the letter × in the ×©×§××× has to appear in the end as ×¢× ×©[×]×§×××
+					×©××:
 				</p>
 			</div>
 		</div>
@@ -78,9 +79,9 @@
 			<div class="title">Combination of a deletion and an addition</div>
 			<div class="content">Additions can If a word added between the
 				lines corrects a word in the line, both have to be marked. In the
-				following example, the scribe first wrote מתחילין and then deleted
-				it and added מיתישבים above the line. This has to be marked
-				as:התחילו (מתחילין) [מתישבים] ב</div>
+				following example, the scribe first wrote ××ª××××× and then deleted
+				it and added ×××ª××©××× above the line. This has to be marked
+				as:××ª×××× (××ª×××××) [××ª××©×××] ×</div>
 		</div>
 		<div class="diagonal_words_at_the_end_of_lines">
 			<div class="title">Diagonal words at the end of lines</div>
@@ -96,34 +97,34 @@
 					torn and sometimes the ink was erased/blurred.</p>
 				<p>
 					<strong> In order to mark unidentified letters
-						(torn/blurred) press on the “damaged” button and mark spaces
+						(torn/blurred) press on the âdamagedâ button and mark spaces
 						between square brackets according to the estimated missing/unclear
 						part.</strong>
 				</p>
-				<p>needs to be written as follows: קול שילך אצל < ></p>
+				<p>needs to be written as follows: ×§×× ×©××× ××¦× < ></p>
 			</div>
 		</div>
 		<div class="uncertainty_in_transcription">
 			<div class="title">Uncertainty in transcription</div>
 			<div class="content">
 				<p>
-					<strong>‘doubtful’</strong>
+					<strong>âdoubtfulâ</strong>
 				</p>
 				<p>The doubtful button is intended for cases where you are not
 					sure if the automatic transcription correctly identified the letter
 					in the manuscript. Please try to minimize the use of this button
 					and use it only in extreme cases.</p>
 				<p>For example, the last letter of the word is not clear enough
-					and you have doubt whether the transcription is correct: אלא לפי
-					כחן</p>
+					and you have doubt whether the transcription is correct: ××× ××¤×
+					×××</p>
 				<p>
 					<strong>In order to mark the uncertainty, use the mouse to
-						mark the uncertain letter and then press the “doubtful” button .
+						mark the uncertain letter and then press the âdoubtfulâ button .
 						Alternatively, you can press the button and type the most probable
 						option between curly brackets.</strong>
 				</p>
 				<p>In the example there is a need to write the doubtful letter
-					as follows: {אלא לפי כח{ו</p>
+					as follows: {××× ××¤× ××{×</p>
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,4 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
 <div class="marked_text info_content">
 
 
