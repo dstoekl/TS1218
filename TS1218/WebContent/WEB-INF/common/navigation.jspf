@@ -1,13 +1,13 @@
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
-<%-- <fmt:setLocale value="he"/> --%>
-<%-- <fmt:setBundle basename="messages"></fmt:setBundle> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <div>
 	<nav class="top-banner navbar navbar-expand-lg navbar-light bg-dark">
 		<a class="navbar-brand"
 			href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp"
-			title="Tikkoun Sofrim"> <img
-			src="/TS1218/images/TS_logo_nobackground.png"
-			class="d-inline-block align-top" alt="Tikkoun Sofrim logo"> <label
+			title="Tikkoun Sofrim"> 
+			<img src="/TS1218/images/TS_logo_nobackground.png"
+			class="d-inline-block align-top" alt="Tikkoun Sofrim logo"> 
+			<label
 			class="mmsg">Discover Ancient Hebrew Manuscripts<br>Try
 				your skills at deciphering them
 		</label>
@@ -19,7 +19,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 	</nav>
-	<div class="top-nav d-flex justify-content-between p-2">
+	<div dir="${dir}" class="top-nav d-flex justify-content-between p-2">
 		<div>
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a class="nav-link" data-link="transcribe"
@@ -62,7 +62,7 @@
 					href="${pageContext.request.contextPath}/LoginServlet?lang=FR">FR</a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/LoginServlet?page=views/login.jsp"><fmt:message key="toolbar.right.logout"/></a>
+					href="${pageContext.request.contextPath}/LoginServlet?page=views/logout.jsp"><fmt:message key="toolbar.right.logout"/></a>
 				</li>
 			</ul>
 		</div>

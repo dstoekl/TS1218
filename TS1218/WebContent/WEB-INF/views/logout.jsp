@@ -3,14 +3,14 @@
 <%@include file="../common/header.jspf"  %>
 <body  class="flex-column d-flex justify-content-between">
 	<script type="text/javascript">
-document.getElementById("project").className += " active";
+document.getElementById("logout").className += " active";
  </script>
 <%@include file="../common/navigation.jspf"  %>
 
 
     <div >
-    <h1>Thank you for helping us to decipher ancient Hebrew manuscripts</h1>
-    Your linecount: ${userlinecount}
+    <h1><fmt:message key="main.work_area.Good_bye_Message1"/></h1>
+    <fmt:message key="main.work_area.Good_bye_Message2"/> ${userlinecount}
     
     <p>Page under Construction
     </div>

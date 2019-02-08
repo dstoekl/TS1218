@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import il.haifa.ac.dh.tikkounsofrim.impl.*;
 import il.haifa.ac.dh.tikkounsofrim.model.*;
@@ -43,24 +44,18 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String newlang = request.getParameter("lang");
-		String currentlang = (String) request.getSession().getAttribute("lang");
-		if (newlang != null) {
-			String dir = "LTR";
-			request.getSession().setAttribute("dir", newlang);
-			if("HE".equalsIgnoreCase(newlang)) {
-				dir = "RTL";
-			}
-			request.getSession().setAttribute("lang", newlang);
-			request.getSession().setAttribute("dir", dir);
-			String oldpage = (String) request.getSession().getAttribute("page");
-			if (oldpage==null) {
-				oldpage= "views/login.jsp";
+//TODO avoid unnecessary resets		String currentlang = (String) request.getSession().getAttribute("lang");
+		if (newlang != null ) {
+			setLanguage(request.getSession(), newlang);
+			String currentpage = (String) request.getSession().getAttribute("page");
+			if (currentpage==null) {
+				currentpage= "views/login.jsp";
 			}
 			System.out.println("New Lang" + newlang);
-			request.getRequestDispatcher("/WEB-INF/" + oldpage).forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/" + currentpage).forward(request, response);
 			return;
 		} else {
-			setDefaultLanguage(request);
+			setDefaultLanguage(request.getSession());
 		}
 
 		String page = request.getParameter("page");
@@ -96,13 +91,42 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @param request
 	 */
-	private void setDefaultLanguage(HttpServletRequest request) {
-		if (request.getSession().getAttribute("lang") == null) {
-			// TODO change to HE
-			request.getSession().setAttribute("lang", "EN");
-			request.getSession().setAttribute("dir", "LTR");
+	private void setDefaultLanguage(HttpSession session) {
+		if (session.getAttribute("lang") == null) {
+			
+			setLanguage(session,"HE");
 		}
 	}
+	
+	private void setLanguage(HttpSession session, String lang) {
+		String dir ="ltr";
+		String msglang = "en";
+		switch (lang) {
+		case "EN":
+			dir = "ltr";
+			msglang = "en";
+				
+			break;
+		case "FR":
+			dir = "ltr";
+			msglang = "fr";
+				
+			break;
+		case "HE":
+			dir = "rtl";
+			msglang = "es";
+				
+			break;	
+		default:
+			break;
+		}
+		
+		session.setAttribute("lang", lang);
+		session.setAttribute("msglang", msglang);
+		session.setAttribute("dir", dir);
+			
+		}
+	
 
 	/**
 	 * @param request
@@ -121,7 +145,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		setDefaultLanguage(request);
+		setDefaultLanguage(request.getSession());
 		
 		String login = request.getParameter("login");
 		System.out.println("login exists " + login);

@@ -1,3 +1,4 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
 <div class="thanks">
 	<div class="header">
 		<strong>Special Thanks</strong>
@@ -10,7 +11,7 @@
 			transcriptions used for the initial training of Kraken: Prof. Hananel
 			Mack, Dr. Tamar Kadari, Prof. Rivka Ulmer.</p>
 		<p>Additionally, thank you to the following institutions for
-			providing images for this project: Bibliothèque de Genève, Biblioteca
+			providing images for this project: BibliothÃ¨que de GenÃ¨ve, Biblioteca
 			Apostolica Vaticana, Biblioteca Palatina in Parma. All rights of the
 			manuscript images reserved to these institutions.</p>
 

@@ -38,13 +38,13 @@
 			of Hebrew</label>
 
 		<ul class="likert">
-			<li>None</li>
-			<li><input type="radio" name="hebrew" value="1" /></li>
-			<li><input type="radio" name="hebrew" value="2" /></li>
-			<li><input type="radio" name="hebrew" value="3" /></li>
-			<li><input type="radio" name="hebrew" value="4" /></li>
-			<li><input type="radio" name="hebrew" value="5" /></li>
-			<li>Very Knowledgeable</li>
+			<li class="likert">None</li>
+			<li class="likert"><input type="radio" name="hebrew" value="1" /></li>
+			<li class="likert"><input type="radio" name="hebrew" value="2" /></li>
+			<li class="likert"><input type="radio" name="hebrew" value="3" /></li>
+			<li class="likert"><input type="radio" name="hebrew" value="4" /></li>
+			<li class="likert"><input type="radio" name="hebrew" value="5" /></li>
+			<li class="likert">Very Knowledgeable</li>
 		</ul>
 	</fieldset>
 	<fieldset>
@@ -52,20 +52,17 @@
 
 		<ul class="likert">
 			<li>None</li>
-			<li><input type="radio" name="midrashim" value="1" /></li>
-			<li><input type="radio" name="midrashim" value="2" /></li>
-			<li><input type="radio" name="midrashim" value="3" /></li>
-			<li><input type="radio" name="midrashim" value="4" /></li>
-			<li><input type="radio" name="midrashim" value="5" /></li>
-			<li>Very Knowledgeable</li>
+			<li class="likert"><input type="radio" name="midrashim" value="1" /></li>
+			<li class="likert"><input type="radio" name="midrashim" value="2" /></li>
+			<li class="likert"><input type="radio" name="midrashim" value="3" /></li>
+			<li class="likert"><input type="radio" name="midrashim" value="4" /></li>
+			<li class="likert"><input type="radio" name="midrashim" value="5" /></li>
+			<li class="likert">Very Knowledgeable</li>
 		</ul>
 	</fieldset>
 	<p class="signin button">
 		<input name="register" type="submit"
 			style="width: 75px; margin-left: 25px;" value="Register" />
 	</p>
-	<p class="change_link">
-		Already registered ? <a href="#tologin" class="to_register"> Go
-			and log in </a>
-	</p>
+	
 </form>

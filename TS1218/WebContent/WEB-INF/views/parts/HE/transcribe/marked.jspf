@@ -1,5 +1,5 @@
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
-<div class="marked_text info_content">
+<div dir="rtl" class="marked_text info_content">
 
 
 	<div class="header">
@@ -90,7 +90,7 @@
 					<strong> כדי לסמן אותיות לא מזוהות עקב קרע או טשטוש, לחצו על כפתור 'פגום' 
 					וסמנו רווחים בין הסוגריים המזוותים על פי גודל החסר המשוער.</strong>
 					</p>
-					 <p>- יש לרשום זאת כך: '<  >קול שילך אצל'</p>
+					 <p>- יש לרשום זאת כך: '&lt; קול שילך אצל'&gt;</p>
 
 
 			</div>

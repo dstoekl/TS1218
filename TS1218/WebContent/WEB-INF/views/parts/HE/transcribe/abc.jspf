@@ -1,3 +1,4 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
 <div class="abc-page info_content">
 	<div class="header">
 		<div class="title">Geneva letters</div>

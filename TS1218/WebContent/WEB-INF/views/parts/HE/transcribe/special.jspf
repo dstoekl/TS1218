@@ -1,11 +1,13 @@
-<div class="special_chars info_content">
-	<div class="header">
-		<div class="title">סימנים מיוחדים</div>
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+
+<div dir="rtl"    class="special_chars info_content">
+	<div  class="header">
+		<div  class="title">סימנים מיוחדים</div>
 	</div>
-	<div class="content">
+	<div dir="rtl" class="content">
 		<div class="line_fillers">
 			<div class="title">שומר שורה</div>
-			<div class="content">
+			<div dir="rtl" class="content">
 				<p>כדי לשמור על גוף טקסט אחיד ואסתטי, נהגו סופרי ימי הביניים להוסיף סימנים שונים בסופי השורות במקרים בהם הטקסט לא הגיע עד סוף השורה. אחרים נהגו לרשום את האותיות הראשונות של המילה ואז להעתיקה בשלמותה בתחילת השורה הבאה. שיטה נוספת היא כתיבת אות אחרונה רחבה במיוחד, עד סוף השורה 
 סופר כתב יד ז'נבה ממלא בדרך כלל את סופי השורות בקו אלכסוני, או בשני קווים אלכסוניים.
 </p>
@@ -46,7 +48,7 @@
 אם נתקלתם בסימן אחר שיש לכם במקלדת, לדוגמא נקודותיים, ניתן להשתמש בו על פי שיקול דעתכם.
 
 				</strong>
-				</p>
+				
 			</div>
 		</div>
 		<div class="ligature_alef_lamed">
@@ -83,7 +85,7 @@
 </div>
 <strong>קיצורים יש לרשום כפי שהם, תוך שימוש בגרש בסוף המילה. אין להשלים את הקיצורים .
 </strong> לדוגמא: 
-</p>
+
 				<div>
 					<img
 						src="/TS1218/images/special_characters/k_special_characters_abbreviations_and_numbers4.png">
@@ -108,11 +110,11 @@
 			<div class="content">
 				<p>
 					ישנן שיטות רבות של רישום שם האל בכתבי יד יהודיים, שנועדו להחליף את השם המפורש. רובן משתמשות בשניים או שלשה יו"דין, לעתים בתוספת עיטור קבוע.
-					</div> סופר כתב יד ז'נבה רושם את שם האל בדרך כלל כך:
+					 סופר כתב יד ז'נבה רושם את שם האל בדרך כלל כך:
 					<img
 						src="/TS1218/images/special_characters/n_special_characters_divine_name.png">
 					יש לרשום את האותיות כפי שהן: יוי.
-				</p>
+				</div>
 			</div>
 		</div>
 		<div class="headwords">
@@ -126,9 +128,9 @@
 					src="/TS1218/images/special_characters/o_special_characters_headwords.png" class="large">
 			</div>
 		</div>
-	</div>
+	
 
 
 
 
-</div>
+

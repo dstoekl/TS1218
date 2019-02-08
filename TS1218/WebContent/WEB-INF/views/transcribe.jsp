@@ -1,5 +1,7 @@
-'<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <jsp:directive.page contentType="text/html;charset=UTF-8" />
+
 <%@include file="../common/header.jspf"%>
 
 <body onload="onloadResize();" dir="${dir}">
@@ -7,21 +9,22 @@
 	<div dir="ltr"     class="transcribe-page scrollable mt-2 p-2 row">
 		<div id="info-page" class="container col-4 flex-column d-flex">
 			<div dir="${dir}">
+
 				<ul class="nav nav-tabs flex-nowrap" role="tablist">
 					<li class="nav-item"><a class="nav-link active sfont"
 						id="page-tab" data-toggle="tab" role="tab" href="#page"
-						aria-controls="page" aria-selected="true">Page</a></li>
+						aria-controls="page" aria-selected="true"><fmt:message key="main.data_area.page"/></a></li>
 
 					<li class="nav-item"><a class="nav-link sfont"
 						id="special-tab" data-toggle="tab" role="tab" href="#special"
-						aria-controls="special">Special Characters</a></li>
+						aria-controls="special"><fmt:message key="main.data_area.Issues"/></a></li>
 
 					<li class="nav-item"><a class="nav-link sfont" id="ab-tab"
-						data-toggle="tab" role="tab" href="#ab" aria-controls="ab">אבג</a>
+						data-toggle="tab" role="tab" href="#ab" aria-controls="ab"><fmt:message key="main.data_area.Alphabet"/></a>
 					</li>
 
 					<li class="nav-item sfont"><a class="nav-link" id="marked-tab"
-						data-toggle="tab" role="tab" href="#marked" aria-controls="marked">Marked
+						data-toggle="tab" role="tab" href="#marked" aria-controls="marked"><fmt:message key="main.data_area.editing"/>
 							Text</a></li>
 
 					<li class="nav-item"><a class="nav-link sfont" id="help-tab"
@@ -81,13 +84,13 @@
 				</div>
 				<div class="tab-pane fade" id="special" role="tabpanel"
 					aria-labelledby="profile-tab">
-					<div class="tabcontent">
+					<div dir="${dir}" class="tabcontent">
 						<jsp:include page="../views/parts/${lang}/transcribe/special.jspf" />
 					</div>
 				</div>
 				<div class="tab-pane fade" id="ab" role="tabpanel"
 					aria-labelledby="ab-tab">
-					<div class="tabcontent">
+					<div dir="${dir}" class="tabcontent">
 						<jsp:include page="../views/parts/${lang}/transcribe/abc.jspf" />
 					</div>
 				</div>
@@ -112,8 +115,12 @@
 				<div class="w-100 p-3">
 					<div id="work-page"
 						class="d-flex flex-column justify-content-between">
-						<div dir="${dir}"  class="header mb-4">
-							<div><fmt:message key="main.work_area.intro_line_1"/></div>
+						<div style="float: left"  class="header mb-4">
+							<div>
+							
+							<fmt:message key="main.work_area.intro_line_1"/>
+							
+							</div>
 
 							<div><fmt:message key="main.work_area.intro_line_2"/></div>
 						</div>
@@ -143,9 +150,21 @@
 									type="hidden" id="trwOrig" value="${transcribedline}" />
 							</div>
 							<!-- Transcribe toolbar -->
-							<div  class="btn-toolbar justify-content-between d-flex mt-3 p-10"
+							<div dir="ltr" class="btn-toolbar justify-content-between d-flex mt-3 p-10"
 								role="toolbar">
-								<div class="mr-2" role="group">
+<!-- 								<div class="mr-2" role="group"> -->
+<!-- 									<select id="filler" class="custom-select" -->
+<!-- 										title="End of line marks" onchange="myFill()"> -->
+<!-- 										<option value="">&nbsp;</option> -->
+<!-- 										<option value="/">/</option> -->
+<!-- 										<option value="//">//</option> -->
+<!-- 										<option value="|">|</option> -->
+<!-- 										<option value="V">V</option> -->
+<!-- 										<option value="'">'</option> -->
+<!-- 									</select> -->
+<!-- 								</div> -->
+								<div class="btn-group mr-2" role="group"
+									aria-label="First group">
 									<select id="filler" class="custom-select"
 										title="End of line marks" onchange="myFill()">
 										<option value="">&nbsp;</option>
@@ -155,9 +174,6 @@
 										<option value="V">V</option>
 										<option value="'">'</option>
 									</select>
-								</div>
-								<div class="btn-group mr-2" role="group"
-									aria-label="First group">
 									<button class="btn btn-secondary" type="button"
 										onclick="myInsert('ﭏ')" title="Aleph Lamed Ligature">
 										<b>ﭏ</b>
@@ -186,7 +202,7 @@
 								</div>
 
 								<!-- right part -->
-								<div class="btn-group mr-2" role="group"
+								<div dir="rtl" class="btn-group mr-2" role="group"
 									aria-label="Second group">
 									<button class="btn btn-secondary" type="button"
 										onclick="myReset()" title="Reset to original transcribedline"><fmt:message key="main.work_area.button_5"/></button>
@@ -198,7 +214,8 @@
 										onclick="myResize(-1)" title="Reduce size of text">
 										<span style="font-size: smaller;"><b>א-</b></span>
 									</button>
-									<label id="test">Font size</label>
+									<button class="btn btn-secondary" type="button" title="Font size" id="test" disabled="disabled" ></button>
+<!-- 									<label id="test">Font size</label> -->
 								</div>
 							</div>
 

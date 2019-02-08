@@ -57,7 +57,9 @@ public class TranscribeServlet extends HttpServlet {
 		setupTranscription(request, task);
 		start = System.currentTimeMillis();
 		request.getSession().setAttribute("starttime",start);
-		request.getRequestDispatcher("/WEB-INF/views/transcribe.jsp").forward(
+		String page = "views/transcribe.jsp";
+		request.getSession().setAttribute("page", page);
+		request.getRequestDispatcher("/WEB-INF/"+page).forward(
 				request, response);
 	}
 

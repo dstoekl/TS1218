@@ -1,3 +1,4 @@
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
 <div class="team">
 	<div class="header">
 		<strong>Team</strong>
@@ -46,7 +47,7 @@
 			for digital and computational humanities applied to ancient writing
 			at the EPHE, PSL.</div>
 
-		<div class="member">Dr. Alan Wecker is a chief developer in the
+		<div class="member">Dr. Alan J. Wecker is a chief developer in the
 			Tikkoun Sofrim project. Alan has a Ph.D. in Information Systems.</div>
 
 	</div>
